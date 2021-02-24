@@ -1,0 +1,3 @@
+{
+  "components/home-categories": "<div class=\"image-link-blocks\">\n\n\t<div class=\"image-link-block\">\n\t\t<a href=\"#\">\n\t\t\t<span class=\"image\"><img src=\"{{cdn 'img/home-featured-club-car.jpg'}}\" alt=\"Club Car\"></span>\n\t\t\t<span class=\"name\">Club Car</span>\n\t\t</a>\n\t</div>\n\n\t<div class=\"image-link-block\">\n\t\t<a href=\"#\">\n\t\t\t<span class=\"image\"><img src=\"{{cdn 'img/home-featured-ezgo.jpg'}}\" alt=\"EZGO\"></span>\n\t\t\t<span class=\"name\">EZGO</span>\n\t\t</a>\n\t</div>\n\n\t<div class=\"image-link-block\">\n\t\t<a href=\"#\">\n\t\t\t<span class=\"image\"><img src=\"{{cdn 'img/home-featured-yamaha.jpg'}}\" alt=\"Yamaha\"></span>\n\t\t\t<span class=\"name\">YAMAHA</span>\n\t\t</a>\n\t</div>\n\n</div>\n"
+}

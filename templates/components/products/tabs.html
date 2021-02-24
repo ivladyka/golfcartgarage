@@ -1,0 +1,81 @@
+<ul class="tabs" data-tab role="tablist">
+    {{#if theme_settings.show_product_details_tabs}}
+        <li class="tab is-active" role="presentational">
+            <a class="tab-title" href="#tab-description" role="tab" tabindex="0" aria-selected="true" controls="tab-description">{{lang 'products.description'}}</a>
+        </li>
+    {{/if}}
+    <!-- <li class="tab{{#unless theme_settings.show_product_details_tabs}} is-active{{/unless}} tab-heading--specs" role="presentational">
+        <a class="tab-title" href="#tab-specifications" role="tab" tabindex="0" aria-selected="false" controls="tab-specifications">Specifications</a>
+    </li> -->
+    {{#unless theme_settings.show_short_desc}}
+        {{#if product.warranty}}
+          <!--   <li class="tab" role="presentational">
+                <a class="tab-title" href="#tab-warranty" role="tab" tabindex="0" aria-selected="false" controls="tab-related">Warranty</a>
+            </li> -->
+        {{/if}}
+    {{/unless}}
+    {{#if product.videos.list.length}}
+        <li class="tab" role="presentational">
+            <a class="tab-title" href="#tab-videos" role="tab" tabindex="0" aria-selected="false" controls="tab-related">Videos</a>
+        </li>
+    {{/if}}
+    {{#if settings.show_product_reviews}}
+        {{#gt product.reviews.total 0}}
+            <li class="tab review-tab" role="presentational">
+                <a class="tab-title" href="#tab-reviews" role="tab" tabindex="0" aria-selected="false" controls="tab-related">Reviews</a>
+            </li>
+        {{/gt}}
+    {{/if}}
+    {{#and product.related_products theme_settings.related_products_tab}}
+        <li class="tab" role="presentational">
+            <a class="tab-title" href="#tab-related" role="tab" tabindex="0" aria-selected="false" controls="tab-related">{{lang 'products.related_products'}}</a>
+        </li>
+    {{/and}}
+    {{#if product.similar_by_views}}
+        <li class="tab" role="presentational">
+            <a class="tab-title" href="#tab-similar" role="tab" tabindex="0" aria-selected="false" controls="tab-similar">{{lang 'products.similar_by_views'}}</a>
+        </li>
+    {{/if}}
+</ul>
+
+<div class="tabs-contents">
+{{#if theme_settings.show_product_details_tabs}}
+    <div role="tabpanel" aria-hidden="false" class="tab-content has-jsContent is-active" id="tab-description" {{#if schema}} itemprop="description"{{/if}}>
+        {{{product.description}}}
+        {{{snippet 'product_description'}}}
+    </div>
+{{/if}}
+
+<!-- specifications tab was here -->
+<!-- IS+ Product Recommendation Widget START --><div title="You Might Also Like..." layout="horizontal" sources="related_views,similar_products,related_recently_viewed,related_purchase" id="isp-related-widget-1"></div> <script src="https://acp-magento.appspot.com/js/isp_related_products.js?v=1.0.9&UUID=a457973f-6955-4e60-ad5d-885e2c0aae93&store=1"></script> <!-- IS+ Product Recommendation Widget END -->
+{{#unless theme_settings.show_short_desc}}
+    {{#if product.warranty}}
+       <!-- <div role="tabpanel" aria-hidden="true" class="tab-content has-jsContent" id="tab-warranty">
+            {{{product.warranty}}}
+        </div> -->
+    {{/if}}
+{{/unless}}
+{{#if product.videos.list.length}}
+    <div role="tabpanel" aria-hidden="true" class="tab-content has-jsContent" id="tab-videos">
+        {{> components/products/videos product.videos}}
+    </div>
+{{/if}}
+{{#if settings.show_product_reviews}}
+    {{#gt product.reviews.total 0}}
+        <div role="tabpanel" aria-hidden="true" class="tab-content has-jsContent" id="tab-reviews">
+            {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
+        </div>
+    {{/gt}}
+{{/if}}
+{{#and product.related_products theme_settings.related_products_tab}}
+    <div role="tabpanel" aria-hidden="true" class="tab-content has-jsContent" id="tab-related">
+        {{> components/products/related products=product.related_products columns=6}}
+    </div>
+{{/and}}
+
+{{#if product.similar_by_views}}
+    <div role="tabpanel" aria-hidden="true" class="tab-content has-jsContent" id="tab-similar">
+        {{> components/products/similar-by-views products=product.similar_by_views columns=6}}
+    </div>
+{{/if}}
+</div>

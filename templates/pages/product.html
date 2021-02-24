@@ -1,0 +1,229 @@
+---
+product:
+    videos:
+        limit: {{theme_settings.productpage_videos_count}}
+    reviews:
+        limit: {{theme_settings.productpage_reviews_count}}
+    related_products:
+        limit: {{theme_settings.productpage_related_products_count}}
+    similar_by_views:
+        limit: {{theme_settings.productpage_similar_by_views_count}}
+---
+{{#partial "customheaderscripts"}}
+<script type="text/javascript">
+    (function (d) {
+        d.addEventListener("DOMContentLoaded", function (e) {
+            var mbcScript = "https://apps.minibc.com/bootstrap/5f103d0f14821";
+
+            if (window.jQuery) {
+                loadScript(mbcScript);
+            } else {
+                loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js");
+                var interval = setInterval(function () {
+                    if (window.jQuery) {
+                        clearInterval(interval);
+                        loadScript(mbcScript);
+                    }
+                }, 100);
+            }
+
+            /**
+              * load javascript
+              *
+              * @param {String} script url
+              */
+            function loadScript(script) {
+                var h = d.getElementsByTagName("head"),
+                    s = d.createElement("script");
+                s.setAttribute("type", "text/javascript");
+                s.setAttribute("src", script);
+                h[0].appendChild(s);
+            }
+        });
+    })(document);
+</script>
+{{/partial}}
+{{#partial "customfooterscripts"}}
+<script>
+    (function e() { var e = document.createElement("script"); e.type = "text/javascript", e.async = true, e.onload = myInit, e.src = "//cdn1.stamped.io/files/widget.min.js"; var t = document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e, t) })();
+
+    function myInit() {
+        StampedFn.init({
+            apiKey: 'pubkey-sD324q3bP27h54ANRpL0C56e23U8g7', // replace include # (hash)
+            storeUrl: 'www.golfcartgarage.com' // replace include # (hash), without https:// (e.g. www.domain.com)
+        });
+    }
+
+    var divMain = document.createElement("div"); 
+    divMain.setAttribute('id', 'stamped-main-widget'); 
+    divMain.setAttribute('class', 'stamped-main-widget stamped-style-borderless'); 
+    divMain.setAttribute('data-product-id',"{{product.id}}"); 
+    divMain.setAttribute('data-name',"{{product.title}}"); 
+    divMain.setAttribute('data-url', "{{product.url}}"); 
+    divMain.setAttribute('data-image-url', "{{getImage product.main_image 'product'}}"); 
+    document.querySelectorAll('.tabs-contents')[0].appendChild(divMain);
+
+    var divRating = document.createElement("div"); 
+    divRating.setAttribute('id', 'stamped-badge-widget'); 
+    divRating.setAttribute('class', 'stamped-product-reviews-badge stamped-main-badge'); 
+    divRating.setAttribute('data-id',"{{product.id}}"); 
+    document.querySelectorAll('.productView-reviewsstampled')[0].appendChild(divRating) 
+
+    function addEventListenerStamped(el, eventName, handler) { 
+        if (el.addEventListener) { el.addEventListener(eventName, handler); }
+        else { el.attachEvent('on' + eventName, function () { handler.call(el); }); } 
+    }
+
+    addEventListenerStamped(document, 'stamped:reviews:loaded', function(e) {
+    var ratingCount = jQueryStamped('meta[itemprop="reviewCount"]').attr('content');
+        var ratingValue = jQueryStamped('meta[itemprop="ratingValue"]').attr('content');
+
+        var price = '{{ product.price.without_tax.value }}';
+        var richSnippet = {
+            "@context": "http://schema.org",
+            "@type": "Product",
+            "name": {{{json product.title}}},
+            "image": "{{ getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product) }}",
+            "brand": {
+            "@type": "Thing",
+                "url": "{{ product.brand.url }}",
+                "name": "{{ product.brand.name }}"
+
+            },
+            "url": {{{json product.url}}},
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": {{{json product.url}}}
+            }
+            {{#if (trim product.sku)}}
+            ,"sku": {{{json (trim product.sku)}}}
+            {{/if}}
+            {{#if product.stock_level}}
+            ,"inventoryLevel": {
+            "@type": "QuantitativeValue",
+            "value": {{ product.stock_level }}
+            }
+            {{/if}}
+            ,"itemCondition": "http://schema.org/{{#if product.condition}}{{ product.condition }}{{ else}}New{{/if}}Condition"
+            ,"description": {{{json product.description}}}
+        }
+
+        if (price) {
+            richSnippet.offers = {
+                "@type": "Offer",
+                "price": "{{product.price.without_tax.value}}",
+                "priceCurrency": "{{currency_selector.active_currency_code}}",
+                "itemCondition": "{{product.condition}}",
+            "availability": "http://schema.org/
+            {{~#if product.pre_order}}PreOrder
+            {{~else if product.can_purchase '===' false}}OutOfStock
+            {{~else if product.out_of_stock}}OutOfStock
+            {{~else if product.out_of_stock_message}}OutOfStock
+            {{~else}}InStock
+            {{~/if}}",
+            "url": {{{json product.url}}}
+            }
+        }
+
+        if (parseInt(ratingValue) > 0){
+            richSnippet.aggregateRating = {
+                "@type": "AggregateRating",
+                "ratingValue": ratingValue,
+                "reviewCount": ratingCount
+            }
+        }
+        var script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.innerHTML = JSON.stringify(richSnippet);
+        document.getElementsByTagName('head')[0].appendChild(script);
+    });
+</script>
+{{/partial}}
+{{#partial "page"}}
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+{{#each product.shipping_messages}}
+{{> components/common/alert-info message}}
+{{/each}}
+
+<!--div itemscope itemtype="http://schema.org/Product"-->
+<div class="produktpagecontent">
+    {{> components/products/product-view schema=false}}
+
+    {{> components/products/tabs}}
+    <!-- IS+ Product Recommendation Widget START -->
+    <div title="You Might Also Like..." layout="horizontal" sources="related_views,similar_products,related_recently_viewed,related_purchase" id="isp-related-widget-1"></div>
+    <script src="https://acp-magento.appspot.com/js/isp_related_products.js?v=1.0.9&UUID=a457973f-6955-4e60-ad5d-885e2c0aae93&store=1"></script> <!-- IS+ Product Recommendation Widget END -->
+    <meta itemprop="name" content="{{ product.title }}" />
+    <meta itemprop="mpn" content="{{ product.mpn }}" />
+    <meta itemprop="sku" content="{{ product.sku }}" />
+    <link itemprop="image" href="{{getImage product.main_image}}" />
+    <link itemprop="url" href="{{ product.url }}" rel="author" />
+    <div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+        <meta itemprop="name" content="{{ product.brand.name }}" />
+    </div>
+    <meta itemprop="description" content="{{ product.description }}">
+
+
+</div>
+
+{{#if product.can_purchase}}
+<div id="stickyATC">
+    <div class="btn-container">
+
+        <button id="stickyATC-addToCart" data-wait-message="{{lang 'products.adding_to_cart'}}" class="button button--primary">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            {{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}
+        </button>
+    </div>
+    <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage product.main_image 'thumb_size' (cdn ../theme_settings.default_image_product)}}" alt="{{this.alt}}" title="{{this.alt}}">
+    <div class="product-info">
+        <span class="stickyATC-title">{{ product.title }}</span>
+        <span class="productView-price">
+            {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+            {{> components/custom/stickyATCprice price=product.price}}
+
+            {{else}}
+            {{> components/common/login-for-pricing}}
+            {{/or}}
+    </div>
+</div>
+</div>
+{{/if}}
+
+
+{{> components/common/scripts/yotpo}}
+
+{{/partial}}
+
+{{> layout/base}}
+
+<script type="text/javascript">
+
+var _learnq = _learnq || [];
+
+ var item = {
+   Name: "{{product.title}}",
+   ProductID: "{{product.id}}",
+   ImageURL: "{{getImage product.main_image 'product_size' (cdn theme_settings.default_image_product)}}",
+   URL: "{{product.url}}",
+   Brand: "{{product.brand.name}}",
+   Price: "{{product.price.without_tax.value}}",
+   CompareAtPrice: "{{product.price.rrp_without_tax.value}}"
+  };
+
+_learnq.push(['track', 'Viewed Product', item]);
+
+_learnq.push(['trackViewedItem', {
+   Title: item.Name,
+   ItemId: item.ProductID,
+   ImageUrl: item.ImageURL,
+   Url: item.URL,
+
+   Metadata: {
+     Brand: item.Brand,
+     Price: item.Price,
+     CompareAtPrice: item.CompareAtPrice
+ }
+ }]);
+</script>

@@ -1,0 +1,635 @@
+
+#ysw_fa_wrapper {
+    width: 100%;
+    background-color: #e5f0fc;
+    background-image: url(../img/home-app-bg-5.jpg);
+    background-size: cover;
+    background-position: left top;
+    font-family: 'RobotoG',Arial,Helvetica,sans-serif;
+    padding: 40px 10px;
+    display: inline-block;
+	//margin-top:20px;
+
+	.ysw_fa_start_view {
+
+		.ysw_fa_heading {
+			color:#000000;
+			font-size:36px;
+			text-align:center;
+			text-transform:uppercase;
+			line-height:1;
+
+			span {
+				font-weight:600;
+				color:#0266C8;
+			}
+		}
+
+		.ysw_fa_steps_container {
+			width:100%;
+			max-width:1100px;
+			margin:0 auto;
+			padding:10px 0;
+
+			&:after {
+				content:'';
+				display:block;
+				clear:both;
+			}
+			.step_disabled {
+				opacity:0.6;
+				-webkit-user-select: none; /* Safari 3.1+ */
+				-moz-user-select: none; /* Firefox 2+ */
+				-ms-user-select: none; /* IE 10+ */
+				user-select: none; /* Standard syntax */
+			}
+			.step {
+				float:left;
+
+				.step-title {
+					color:#0266C8;
+					text-transform: uppercase;
+					font-size:20px;
+					line-height:1;
+					padding-bottom:10px;
+				}
+
+				select {
+				width: 100%;
+                height: 40px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 0 10px;
+                font-size: 12pt;
+                /* text-transform: uppercase; */
+                border-radius: 3px;
+				}
+                select:disabled
+                {
+                    color:#ccc;
+                }
+				&.ysw_filter_step_1 {
+					
+				}
+
+				&.ysw_filter_step_2 {
+					margin:0;
+				}
+
+				&.ysw_filter_step_3 {
+
+					.year-help {
+                        text-align: left;
+                        padding-top: 5px;
+                        line-height: 1;
+                        font-size: 8pt;
+						a{
+						    color:#0066cb;
+						}
+					}
+					
+				}
+			}
+		}
+
+		.ysw_fa_submit_container {
+		    margin: 0 20px 10px 20px;
+			text-align:left;
+			button {
+				background-color:#89980f;
+				color:#ffffff;
+				font-weight: 600;
+				font-size: 12pt;
+				line-height: 1;
+				padding: 15px 75px;
+				border: 0;
+				&:hover {
+					background-color:#707c0a;
+				}
+				&:disabled
+                {
+                    background-color:#ececec;
+                }
+			}
+		}
+
+		
+
+	}
+
+	.ysw_fa_locked_view {
+		text-align:left;
+        padding:7px 20px;
+		.ysw_fa_selection {
+			display:inline-block;
+			color: #fff;
+			font-size: 12pt;
+			line-height:1;
+
+			span {
+				color:#fff;
+				font-weight: bold;
+			}
+		}
+
+		.ysw_fa_options {
+			display:inline-block;
+			padding-left: 20px;
+    		font-size: 10pt;
+    		line-height:1;
+    		a{
+    		   color: #ff0;
+    		}
+		}
+	}
+
+	.ysw_fa_locked_view,
+	.ysw_fa_start_view {
+		display:none;
+	}
+
+	.ysw_fa_error_message {
+		text-align:center;
+		display:none;
+
+		&.show {
+			display:block;
+		}
+
+		.ysw_fa_message {
+			color:#bc191f;
+			font-size:26px;
+			line-height:1;
+			padding-bottom:20px;
+		}
+
+		ul.ysw_fa_options {
+			font-size:16px;
+			list-style-type:none;
+			padding:0;
+			margin:0;
+
+			li {
+
+				&:nth-child(1) {
+					padding-bottom:10px;
+				}
+			}
+		}
+
+	}
+
+	&.locked {
+    color: #fff!important;
+    font-size: 9pt;
+    text-align: center;
+    text-transform: none;
+    height: 52px;
+    color:#fff;
+    background-color: #0066cb !important;
+		.ysw_fa_locked_view {
+			display:block;
+		}
+
+	}
+
+	&.start {
+
+		.ysw_fa_start_view {
+			display:block;
+		}
+
+	}
+
+	&.slim-view {
+		padding:30px 0;
+		margin:0 0 20px;
+
+		&:after {
+			content:'';
+			clear:both;
+			display:block;
+		}
+
+		.ysw_fa_start_view {
+
+			.ysw_fa_heading {
+				padding-bottom:30px;
+			}
+
+			.ysw_fa_steps_container {
+				width: 100%;
+				float: left;
+				margin: 0;
+				padding: 0;
+				padding: 20px;
+			}
+			.ysw_fa_submit_container {
+				width:50%;
+				float:left;
+				padding:30px 20px 0;
+				
+
+				button {
+				background-color:#89980f;
+				color:#ffffff;
+				font-weight: 600;
+				font-size: 12pt;
+				line-height: 1;
+				padding: 15px 75px;
+				border: 0;
+				&:hover {
+					background-color:#707c0a;
+				}
+				&:disabled
+                {
+                    background-color:#ececec;
+                }
+
+					span {
+						display:none;
+					}
+				}
+			}
+
+		}
+
+	}
+	
+}
+/*
+
+*/
+#ysw_fa_wrapper.slim-view {
+    margin: 0px 0 20px;
+    z-index: 99;
+    position: absolute;
+}
+.page-sidebar #ysw_fa_wrapper.slim-view
+{
+    margin:  0px 0 20px;
+}
+/*------------------------------------------------------------------------------------------------*/
+.homefiltersection #ysw_fa_wrapper{
+    width:400px;
+}
+#ysw_fa_wrapper {
+	padding: 0;
+	margin: 0;
+	background-color: #fff;
+	background-image: none;
+	border-top: none !important;
+
+	.ysw_fa_start_view .ysw_fa_steps_container .step {
+		width: 100%;
+		float: left;
+		padding: 0 20px;
+
+		.step-title {
+			color: #666;
+			text-transform: none;
+			font-size: 11pt;
+			line-height: 1;
+			padding-bottom: 10px;
+			text-align: center;
+		}
+	}
+
+	.ysw_fa_start_view .ysw_fa_steps_container .ysw_filter_step_1.step {
+		div {
+			text-align: center;
+
+			#ysw_club_car {
+				background-image: url(../img/clubcartblue-logo.png);
+				background-image: url(../img/clubcartblue-logo.svg);
+				height: 36px;
+				width: 104px;
+				background-size: 104px 36px;
+				background-position: top center;
+				background-repeat: no-repeat;
+				display: inline-block;
+				margin: 10px;
+				cursor: pointer;
+			}
+
+			#ysw_club_car:hover,
+			#ysw_ezgo:hover,
+			#ysw_yamaha:hover {
+				background-color: #b1d2f3;
+			}
+
+			#ysw_ezgo {
+				background-image: url(../img/ezgoblue-logo.png);
+				background-image: url(../img/ezgoblue-logo.svg);
+				height: 34px;
+				width: 120px;
+				background-size: 120px 34px;
+				background-position: top center;
+				background-repeat: no-repeat;
+				display: inline-block;
+				margin: 10px;
+				cursor: pointer;
+			}
+
+			#ysw_yamaha {
+				background-image: url(../img/yamahablue-logo.png);
+				background-image: url(../img/yamahablue-logo.svg);
+				height: 34px;
+				width: 146px;
+				Background-size: 146px 34px;
+				display: block;
+				background-position: top center;
+				background-repeat: no-repeat;
+				margin: 10px auto;
+				cursor: pointer;
+			}
+
+			#ysw_other,
+			#ysw_dont_know {
+				font-size: 12px;
+				color: #666;
+				display: inline-block;
+				padding: 0px;
+				margin: 10px 0;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+
+			#ysw_other:hover,
+			#ysw_dont_know:hover {
+				color: #0066ca;
+			}
+		}
+	}
+
+	.ysw_fa_start_view .ysw_fa_steps_container .ysw_filter_step_1.step {
+	}
+
+	.ysw_filter_step_1.step {
+		display: block
+	}
+
+	.ysw_filter_step_1.step.ysw_filter_step_1-mob {
+		display: none
+	}
+
+	.ysw_fa_start_view .ysw_fa_steps_container .ysw_filter_step_1.step select {
+		width: 100%;
+		height: 40px;
+		background-color: #fff;
+		border-radius: 3px;
+		border: 1px solid #cccccc;
+		padding: 0 10px;
+		font-size: 12pt;
+		/* text-transform: uppercase; */
+		option {
+			color: transparent;
+			font-size: 0px;
+			text-transform: none;
+			max-height: 36px;
+			display: inline-block;
+			margin: 10px 5px;
+			text-align: center;
+		}
+	}
+
+	#ysw_filter_make option:first-child {
+		display: none;
+	}
+
+	.ysw_fa_start_view .ysw_fa_heading {
+		color: #fff !important;
+		font-size: 17pt;
+		text-align: center;
+		text-transform: none;
+		line-height: 52px;
+		height: 52px;
+		background-color: #0066cb;
+
+		i {
+			background-color: #89980f;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			border-radius: 50%;
+			margin-right: 10px;
+		}
+	}
+}
+#ysw_fa_wrapper.slim-view
+{
+    padding: 0;
+}
+/*------------------------------------------------------------------------------------------------*/
+#ysw_fa_wrapper.slim-view .ysw_fa_start_view .ysw_fa_steps_container
+{
+    padding: 10px 0;
+}
+
+@media screen and (max-width:800px) {
+	.breadcrumbs {
+		display: none;
+	}
+	#ysw_fa_wrapper .ysw_filter_step_1.step {
+		display: none
+	}
+
+	#ysw_fa_wrapper .ysw_filter_step_1.step.ysw_filter_step_1-mob {
+		display: block
+	}
+
+	#ysw_fa_wrapper .ysw_fa_start_view .ysw_fa_submit_container {
+		margin: 0 auto 10px;
+		text-align: left;
+		max-width: 100%;
+		padding: 0 20px
+	}
+
+	#ysw_fa_wrapper .ysw_fa_start_view .ysw_fa_steps_container .ysw_filter_step_1.step div #ysw_yamaha {
+		display: inline-block
+	}
+
+	#ysw_fa_wrapper .ysw_fa_start_view .ysw_fa_steps_container .step {
+		width: 100%;
+		float: none;
+		max-width: 100%;
+		margin: 0 auto;
+		padding-bottom: 0px;
+	}
+
+	#ysw_fa_wrapper .ysw_fa_start_view .ysw_fa_steps_container .step.ysw_filter_step_2 {
+		margin: 0 auto;
+	}
+
+	#ysw_fa_wrapper, .homefiltersection #ysw_fa_wrapper {
+		background-image: none;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		width: 100% !important;
+	}
+
+	.homefiltersection #ysw_fa_wrapper {
+		padding-bottom: 0px;
+	}
+
+	#ysw_fa_wrapper .ysw_fa_start_view .ysw_fa_steps_container {
+		padding: 10px 0 0 0;
+	}
+
+	#ysw_fa_wrapper.slim-view .ysw_fa_start_view .ysw_fa_heading {
+		padding-bottom: 0;
+	}
+
+	#ysw_fa_wrapper.slim-view .ysw_fa_start_view .ysw_fa_steps_container {
+		float: none;
+		width: 100%;
+		padding: 10px 0;
+	}
+
+	#ysw_fa_wrapper.slim-view .ysw_fa_start_view .ysw_fa_submit_container {
+		width: 100%;
+		float: none;
+		padding: 0;
+		display: none;
+	}
+
+	#ysw_fa_wrapper.slim-view .ysw_fa_start_view .ysw_fa_submit_container button {
+		font-size: 24px;
+		display: inline-block;
+		width: auto;
+		height: auto;
+		padding: 15px 50px;
+
+		span {
+			display: inline;
+		}
+	}
+}
+
+@media screen and (max-width:600px) {
+
+	#ysw_fa_wrapper.slim-view {
+		padding-right:10px;
+		padding-left:10px;
+	}
+
+	#ysw_fa_wrapper .ysw_fa_start_view .ysw_fa_heading {
+		font-size:22px;
+	}
+
+	#ysw_fa_wrapper .ysw_fa_start_view .ysw_fa_steps_container .step select {
+		height:40px;
+		font-size:18px;
+	}
+
+	#ysw_fa_wrapper .ysw_fa_start_view .ysw_fa_steps_container .step .step-title {
+		font-size:18px;
+	}
+
+	#ysw_fa_wrapper .ysw_fa_start_view .ysw_fa_submit_container button,
+	#ysw_fa_wrapper.slim-view .ysw_fa_start_view .ysw_fa_submit_container button {
+		font-size:18px;
+		line-height:1.2;
+		padding:10px 0;
+		width:100%;
+
+		span {
+			display:none;
+		}
+
+	}
+
+	#ysw_fa_wrapper.slim-view {
+		padding-top:0px;
+		padding-bottom:0px;
+	}
+
+	#ysw_fa_wrapper .ysw_fa_locked_view .ysw_fa_selection {
+		font-size:22px;
+	}
+
+	#ysw_fa_wrapper .ysw_fa_error_message .ysw_fa_message {
+		font-size:22px;
+	}
+
+}
+
+.make-modal-product-container{
+
+	display: none;
+	background-color:#e5f0fc;
+	padding: 15px;
+	text-align: left;
+    border: 1px solid #f0f0f0;
+	margin-bottom: 10px;
+	clear: both;
+
+	.mfp-icon{
+	    margin-right: 5px;
+
+		i{
+	    	font-size: 40px;		
+		}
+	}
+
+	.success{
+		display: none;
+   		align-items:center;
+
+		i{
+			color: $color-success;		 
+		}
+	}
+
+	.warning{
+		display: none;
+   		align-items:center;
+
+		i{
+			color: $color-warning;
+		}
+	}
+
+	.show-options-btn{
+		margin-top: 10px;
+	}
+
+	&.item-fitting{
+		display: block;
+		.success{
+			display: flex;
+		}
+	}
+
+	&.item-not-fitting{
+		display: block;
+		.warning{
+			display: flex;
+		}
+	}
+
+	.your-choice{
+		margin: 10px 0px;
+
+		span{
+			font-weight: 600;
+		}
+	}
+
+	.make, .model, .year{
+		display: inline-block;	
+	}
+}
+
+@media screen and (max-width:600px) {
+	.make-modal-product-container{
+		.make, .model, .year{
+			display: block;	
+		}		
+	}
+}
+@media screen and (max-width:480px) {
+#ysw_fa_wrapper .ysw_fa_start_view .ysw_fa_steps_container .ysw_filter_step_1.step div #ysw_yamaha {
+    display: block;
+}
+}

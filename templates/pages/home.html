@@ -1,0 +1,269 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
+
+{{#partial "hero"}}
+<div class="content-container home-carousel-section">
+    <div class="homefiltersection">
+        {{> components/make_model_year_filter}}
+    </div>
+
+    {{#if carousel}}
+    {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows}}
+    {{/if}}
+
+    {{{region name="home_below_carousel"}}}
+    {{{snippet 'home_content'}}}
+    {{> components/home-featured-makes}}
+</div>
+{{/partial}}
+{{#partial "page"}}
+<div class="main full">
+    <div class="homewelcomesection">
+        <h1>Your #1 Source for Golf Cart Parts & Accessories</h1>
+        <ul>
+            <li>
+                <strong>GET YOUR PARTS QUICK</strong><br />
+                Most orders ship same or next day.<br />(Batteries excluded.)
+            </li>
+            <li>
+                <strong>PRICE MATCH GUARANTEE</strong><br />
+                Find a lower price somewhere else?<br /> We’ll match it.
+            </li>
+            <li>
+                <strong>FREE SHIPPING</strong><br />
+                Get free shipping on batteries, chargers & any order over $125.
+            </li>
+        </ul>
+    </div>
+
+    <div class="homeadsection">
+        <ul>
+            <li>
+                <img  src="{{cdn 'img/loading.svg'}}" class="lazyload" data-src="https://www.golfcartgarage.com/product_images/theme_images/GCG_WebAssets-Satisfaction-APR2020@2x.jpg" alt="satisfaction guaranteed">
+            </li>
+            <li>
+                <a href="/fleet-pricing/">
+                    <img src="{{cdn 'img/loading.svg'}}" class="lazyload" data-src="https://www.golfcartgarage.com/product_images/theme_images/GCG_WebAssets-Fleet-APR2020@2x.jpg" alt="fleet pricing">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="trustedbysection trustedbysection1">
+        <h2>Trusted By</h2>
+        <ul>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/apple-logo.png'}}" alt="Apple logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/bmw-logo.png'}}" alt="BMW logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/verozon-logo.png'}}" alt="BMW logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/ups-logo.png'}}" alt="UPS logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/fedex-logo.png'}}" alt="Fedex logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/walmart-logo.png'}}" alt="Walmart logo"></li>
+            <br/>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/1200px-Ralph_Lauren_logo_logotype.png" alt="Ralph Lauren"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-51wv8kxbet/product_images/uploaded_images/levis-logo.png" alt="Boring logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/spacex-logo.png'}}" alt="Spacex logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/kroger-logo.png'}}" alt="Kroger logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/delta-logo.png'}}" alt="Delta logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/nasa.png" alt="Nasa logo"></li>
+        </ul>
+    </div>
+    <div class="homepage-reviews">
+        <h2>and 1000's of Happy Customers</h2>
+        <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/review-img.png" alt="Golf Cart Garage reviews" />
+        <ul>
+            <li>
+                Great Service,<br />
+                Great Product!<br />
+                <span>- STEVE G.</span>
+            </li>
+            <li>
+                You are my new go-to for<br />
+                cart parts. Good work!<br />
+                <span>- STEVEN H.</span>
+            </li>
+            <li>
+                Fast Shipping! Really enjoyed<br />
+                the YouTube videos.<br />
+                <span>- ROBERT C.</span>
+            </li>
+            <li>
+                Exactly wht I need to<br />
+                get my cart right.<br />
+                <span>- JUNIOR B.</span>
+            </li>
+
+        </ul>
+        <a href="/reviews/">READ ALL REVIEWS</a>
+    </div>
+    <div class="newhomesection">
+        <h2 class="page-heading">How Do You Cart?</h2>
+        <p>
+            Explore accessories and tips tailored just for the way you like to cart.<br>
+            No matter how you use your cart, we got you covered.
+        </p>
+        <ul class='newhomesection-firstline'>
+            <li><a href="https://www.golfcartgarage.com/golfer/"><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/homeimg11.png" alt="out on the course" /></a></li>
+            <li><a href="https://www.golfcartgarage.com/hero-homesteaders/"><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/homeimg21.png" alt="golf cart community" />
+            </a></li>
+        </ul>
+        <ul class='newhomesection-secondline'>
+            <li><a href="https://www.golfcartgarage.com/outdoor-adventurist/"><img  class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/homeimg31.png" alt="outdoor golf cart" /></a></li>
+            <li><a href="https://www.golfcartgarage.com/neighborhood-commuter/"><img  class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/homeimg41.png" alt="neighborhood use" /></a></li>
+            <li><a href="https://www.golfcartgarage.com/sportsman/"><img  class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/homeimg51.png" alt="sportman" /></a></li>
+        </ul>
+        <a href="https://www.golfcartgarage.com/teen-drivers/">
+            <ul class='third line'>
+                <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/homeimg61.png" alt="drivers" /></li>
+                <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/homeimg621.png" alt="out on the course" /></li>
+                <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/homeimg63.png" alt="out on the course" alt="out on the course" /></li>
+            </ul>
+        </a>
+    </div>
+    {{{region name="home_below_menu"}}}
+    {{#if template_file '===' 'pages/home'}}
+    {{#if banners.bottom}}
+    <!-- 3 curly brackets limit banners.bottom 1 3 curly brackets -->
+    {{/if}}
+    {{/if}}
+    {{{region name="home_below_top_products"}}}
+    <!----------------------------------------------------------------->
+  
+    <!----------------------------------------------------------------->
+
+
+    <div class="homeadsection2" style="display:none">
+        <ul>
+            <li>
+                <div>
+                    <strong>Our Team is What Sets Us Apart</strong> <br>
+                    <span><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></span><br />
+                    Our team loves their jobs and always strives to provide
+                    <b>5-star service</b>. Whether it’s helping you on the phone,
+                    answering your emails or researching the best new parts,
+                    we’re here to help.<br />
+                    <a href="/about-us/" class="button">MEET WHO YOU’RE TALKING TO</a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <strong>Dave’s Here to Help</strong><br />
+                    First time cart owner? Need help installing that lift?
+                    How do I prepare my cart for long term storage?
+                    Join Dave in the resource center, and get answers to all
+                    the questions you have about your cart.
+                    Or, ask him directly at <a href="mailto:askdave@golfcartgarage.com">askdave@golfcartgarage.com</a><br />
+                    <a href="/golf-cart-resource-library/" class="button">GO TO THE RESOURCE CENTER</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    {{{region name="home_below_featured_products"}}}
+</div>
+{{#each shipping_messages}}
+{{> components/common/alert-info message}}
+{{/each}}
+{{/partial}}
+{{#partial "instagramsection"}}    
+<div class="homegreensection">
+  <div class="container">
+      <div class="main full">
+      <h2>Questions About Your Golf Cart?</h2> 
+      <div class="homegreensection2">
+        <ul>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/GCG_DavePhoto_Candid.png" alt="GCG Dave"> </li>
+             <li>
+                 <p class="davegarage">VISIT DAVE IN THE GARAGE</p>
+                 <p>Our resident expert gear-head, Dave, delivers tips, tricks, how-to videos, reminders to keep us moving, sprinkling in a bit of humor to keep us entertained.</p>
+                 <a href="https://www.golfcartgarage.com/golf-cart-resource-library/">VISIT THE RESOURCE SECTION</a>
+            </li>
+        </ul>
+        <hr/>
+        <p class="text-center">Don't know where to start? See some of our most popular videos below</p>
+        <ul class="greenyourtubesection">
+            <li>
+           
+            <a href="https://youtu.be/ALvkrJmTD6w" target="_blank"><img  src="{{cdn 'img/loading.svg'}}" data-src="https://www.golfcartgarage.com/product_images/uploaded_images/charge-dead-golf-cart-battery-video.png" class="lazyload" alt="charge dead batteries" /></a>
+            <h4>How To Charge Dead Batteries</h4>
+            </li>
+           <li>
+           
+            <a href="https://youtu.be/WdTunZs1AuM" target="_blank"><img  src="{{cdn 'img/loading.svg'}}" data-src="https://www.golfcartgarage.com/product_images/uploaded_images/five-panel-mirror.png" class="lazyload" alt="5 panel golf cart mirror" /></a>
+               <h4>Five Panel Rearview Mirrors</h4>
+            </li>
+            <li>
+          
+           <a href="https://youtu.be/8_s6N6HsOCc" target="_blank" style="background-color:none; padding:0;"><img  src="{{cdn 'img/loading.svg'}}" data-src="https://www.golfcartgarage.com/product_images/uploaded_images/connect-charger.png" class="lazyload" alt="connecting a charger" /></a>
+               <h4>Connect Plugs To Lester Charger</h4>
+            </li>
+        </ul>
+      </div>
+      <div class="homegreensectionfooter">
+      <p   style="max-width:600px;">We have tons more videos to help you with all of your golf cart repair and customization needs. We call it GCGTV.</p><br/>
+       <span class="yourtube-img-link"><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/GCGTV-Logo.png" alt="GCGTV Logo"></span><br/>
+        <a href="https://www.youtube.com/channel/UC_NPYg0x-eRzhr90aCCotDQ/featured"  target="_blank">VISIT GGCTV ON YOUTUBE</a>
+</div>
+      </div>
+  </div>
+</div>
+  <div class="container">
+      <div class="main full">
+        <div class="trustedbysection">
+        <h2 style="margin-bottom:40px;">Shop the Brands You Trust</h2>
+        <ul>
+            <li><a href="/rhox-brand/"><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/RHOX-Logo.png" alt="RHOX logo"></a></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/DoubleTake-Logo.png" alt="Double Take logo"></li>
+            <li><a href="/madjax-brand/"><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/MadJax-Logo.png" alt="BMW logo"></a></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/Jakes-Logo.png" alt="Jakes logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/Lester-Logo.png" alt="Lester logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/RedHawk-Logo.png" alt="RedHawk logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/Nivel-Logo.png" alt="Nivel logo"></li>
+            <li><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-snboj/product_images/uploaded_images/troyan.png" alt="Nivel logo"></li>
+        </ul>
+    </div>
+      
+       {{!#if products.featured}}
+    {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+    {{!/if}}
+    
+            <div class="homeadsection4">
+        <h2>Shop Parts by Brand</h2>
+        <ul>
+            <li><a href="/club-car/"><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/clubcartblue-logo.png'}}" alt="Club Car Parts"></a></li>
+            <li><a href="/ezgo-golf-cart-parts-accessories/"><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/ezgoblue-logo.png'}}" alt="Ezgo Parts"></a></li>
+            <li><a href="/yamaha-golf-cart-parts-accessories/"><img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/yamahablue-logo.png'}}" alt="Yamaha Golf Cart Parts"></a></li>
+        </ul>
+    </div>
+    <p>At Golf Cart Garage, we specialize in golf cart parts, accessories and golf cart supplies. As your top source for replacement golf cart parts and accessories, our goal is offer the best selection and the smoothest buying experience whether you own Club Car, EZ-Go or Yamaha golf carts. Aside from the cheap golf cart parts for sale, we also promise to offer you unparalleled customer service. Our team completely understands that finding the right part, be it tire combos, wheels, battery chargers, engine parts or lights, can be tricky. But have no fear, Golf Cart Garage is here to help you choose and buy all the <a href="/golf-cart-accessories/" title="accessories for golf carts">golf cart accessories</a> and parts that you need. At GCG, you will always get to speak with a human whether you are looking to buy or just have a question about our featured products.</p>
+
+    <p>We also carry custom golf cart parts and accessories!</p>
+     </div>
+</div>
+<div class="instagramsection">
+    <div class="main full">
+        <h2>Show Us Your Ride</h2>
+        <p>
+            We love seeing our customer enjoying their carts.<br />
+            <b>#golfcartgarage</b>
+        </p>
+        <p>
+            <a href="https://www.facebook.com/GolfCartGarage/" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/GolfCartGarage" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/thegolfcartgarage/" target="_blank"><i class="fa fa-instagram"></i></a>
+        </p>
+
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}
+
+

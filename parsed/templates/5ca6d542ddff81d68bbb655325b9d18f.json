@@ -1,0 +1,3 @@
+{
+  "components/home-featured-makes": "\n<div class=\"popularcategoriessection\">\n    <ul>\n        <li>Popular Categories</li>\n        <li>\n            <a href=\"/golf-cart-battery-chargers/\"><span class=\"name\">Battery Chargers</span></a><i class=\"fa fa-caret-right\"></i>\n\t\t</li>\n        <li>\n            <a href=\"/wheels-tires/\"><span class=\"name\">Tires &amp; Wheels</span></a><i class=\"fa fa-caret-right\"></i>\n        </li>\n        <li>\n            <a href=\"/golf-cart-lights/\"><span class=\"name\">Lights</span></a><i class=\"fa fa-caret-right\"></i>\n\t\t</li>\n    </ul>\n</div>\n"
+}

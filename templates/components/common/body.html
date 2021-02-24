@@ -1,0 +1,11 @@
+<div class="body {{#if template_file '===' 'pages/home'}}home{{/if}}">
+    {{#block "hero"}} {{/block}}
+     {{#block "aboutusbluesection"}} {{/block}}
+    <div class="container">
+        {{#block "page"}} {{/block}}
+    </div> 
+    
+    {{#block "instagramsection"}} {{/block}}
+    
+    {{> components/common/modal}}
+</div>

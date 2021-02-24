@@ -1,0 +1,84 @@
+<div id="ysw_fa_wrapper" {{#if template_file '===' 'pages/home'}} {{else}} class="slim-view" {{/if}}>
+    <div class="ysw_fa_start_view">
+      <div class="ysw_fa_heading"><div class='ysw_fa_heading-table-row'><div class="makemodel-check-div"><div class="makemodel-check"><i class="fa fa-check"></i></div></div><div class="ysw_fa_heading-table-text">SEE ONLY YOUR PARTS</div></div><!--Find the <span>right</span> parts for <span>your</span> Golf Cart:--></div>
+      <div class="ysw_fa_steps_container">
+          <div class="ysw_filter_step_1 step">
+              <div class="step-title">Start by selecting the make of your cart below.</div>
+              <div class="step-title step-title-mob"> Select your make below</div>
+              <div>
+                  <div id="ysw_club_car"></div>
+                  <div id="ysw_ezgo"></div>
+                  <div id="ysw_yamaha"></div>
+                  <div id="ysw_other">Other</div> or
+                  <div id="ysw_dont_know">I don't know</div>
+              </div>
+              <select id="ysw_filter_make" style="display:none;">
+                  <option value="">Select Your Make</option>
+                  <option value="Other">Other</option>
+                  <option value="I don't know">I don't know</option>
+              </select>
+          </div>
+          <div class="ysw_filter_step_1 step ysw_filter_step_1-mob" >
+              <div class="step-title">Start by selecting the make of your cart below.</div>
+              <div class="step-title step-title-mob"> Select your make below</div>
+              <div>
+                  {{#or (if category.name '==' 'Club Car Parts & Accessories') (if category.name '==' 'Club Car Battery & Charger Parts')  (if category.name '==' 'Club Car Battery Cables')  (if category.name '==' 'Club Car Battery Maintainers') (if category.name '==' 'Club Car Battery Chargers') (if category.name '==' 'Club Car Battery Hold Down Rods & Plates') (if category.name '==' 'Club Car Battery Meters') (if category.name '==' 'Club Car OBC & OBC Bypass Kits') (if category.name '==' 'Club Car Charger Receptacles') (if category.name '==' 'Club Car Relays & Timers') (if category.name '==' 'Club Car Batteries') (if category.name '==' 'Club Car Battery Chargers') (if category.name '==' 'Club Car Battery & Charger Parts') (if category.name '==' 'Club Car Charger Plug & Cord Sets') (if category.name '==' 'Club Car Body' ) (if category.name '==' 'Club Car Bumpers, Cowls & Panels' ) (if category.name '==' 'Club Car Brush Guards' ) (if category.name '==' 'Club Car Diamond Plate' ) (if category.name '==' 'Club Car Fender Flares' ) (if category.name '==' 'Club Car Nerf Bars' ) (if category.name '==' 'Club Car Rocker Panels' ) (if category.name '==' 'Club Car Brakes') (if category.name '==' 'Club Car Brake Cables') (if category.name '==' 'Club Car Brake Drums') (if category.name '==' 'Club Car Brake Pads') (if category.name '==' 'Club Car Misc. Brake Parts') (if category.name '==' 'Club Car Brake Shoes') (if category.name '==' 'Club Car Battery Chargers') (if category.name '==' 'Club Car Cargo & Storage') (if category.name '==' 'Club Car Clay Baskets') (if category.name '==' 'Club Car Roof Racks') (if category.name '==' 'Club Car Enclosures & Covers') (if category.name '==' 'Club Car Enclosures') (if category.name '==' 'Club Car Storage Covers') (if category.name '==' 'Club Car Storage Trays') (if category.name '==' 'Club Car Utility/Cargo Boxes') (if category.name '==' 'Club Car Controllers') (if category.name '==' 'Club Car New Controllers') (if category.name '==' 'Club Car Rebuilt Controllers') (if category.name '==' 'Club Car Controller Parts') (if category.name '==' 'Club Car Dash & Consoles') (if category.name '==' 'Club Car Enclosures & Covers') (if category.name '==' 'Club Car Enclosures') (if category.name '==' 'Club Car Storage Covers') (if category.name '==' 'Club Car Floor Mats') (if category.name '==' 'Club Car Gas Parts') (if category.name '==' 'Club Car Accelerators') (if category.name '==' 'Club Car Air Filters, Fuel Filters & Oil Filters') (if category.name '==' 'Club Car Bearings & Seals') (if category.name '==' 'Club Car Carburetors') (if category.name '==' 'Club Car Clutches') (if category.name '==' 'Club Car Drive Belts & Generator Belts') (if category.name '==' 'Club Car Fuel Pumps') (if category.name '==' 'Club Car Gas Motors') (if category.name '==' 'Club Car Gas Tanks & Gas Caps') (if category.name '==' 'Club Car Generators & Starters') (if category.name '==' 'Club Car High Speed Gears') (if category.name '==' 'Club Car Igniters & Ignition Coils') (if category.name '==' 'Club Car Mufflers') (if category.name '==' 'Club Car Piston Assemblies') (if category.name '==' 'Club Car Speed Sensors') (if category.name '==' 'Club Car Solenoids') (if category.name '==' 'Club Car Valves & Gaskets') (if category.name '==' 'Club Car Golf Accessories') (if category.name '==' 'Club Car Ball Washers') (if category.name '==' 'Club Car Coolers') (if category.name '==' 'Club Car Golf Bag Attachments') (if category.name '==' 'Club Car Sand Bottles') (if category.name '==' 'Club Car Lift Kits') (if category.name '==' 'Club Car Lights') (if category.name '==' 'Club Car Light Kits') (if category.name '==' 'Club Car Lighting Accessories') (if category.name '==' 'Club Car Turn Signals') (if category.name '==' 'Club Car Voltage Reducers/Regulators') (if category.name '==' 'Club Car Manuals') (if category.name '==' 'Club Car Mirrors') (if category.name '==' 'Club Car Speed Control Parts') (if category.name '==' 'Club Car Steering Wheels & Covers') (if category.name '==' 'Club Car Steering Wheel Covers') (if category.name '==' 'Club Car Steering Wheel Adapters & Columns') (if category.name '==' 'Club Car Suspension') (if category.name '==' 'Club Car Axles') (if category.name '==' 'Club Car Bushings') (if category.name '==' 'Club Car Front End Repair Kits') (if category.name '==' 'Club Car Leaf Springs') (if category.name '==' 'Club Car Nuts, Bolts, Washers, Pins & Rivets') (if category.name '==' 'Club Car Shocks') (if category.name '==' 'Club Car Struts') (if category.name '==' 'Club Car Misc. Suspension Parts') (if category.name '==' 'Club Car Tops') (if category.name '==' 'Club Car Struts') (if category.name '==' 'Club Car Voltage Reducers/Regulators') (if category.name '==' 'Club Car Windshields') (if category.name '==' 'Club Car Windshield Accessories & Parts') (if category.name '==' 'Club Car Struts')}}
+                  <div id="ysw_club_car"></div>
+                  {{else}}
+                  {{#or (if category.name '==' 'EZGO Golf Cart Parts & Accessories') (if category.name '==' 'EZGO Battery Cables') (if category.name '==' 'EZGO Golf Cart Batteries') (if category.name '==' 'EZGO Battery Hold Down Plates & Rods') (if category.name '==' 'EZGO Plugs & Cord Sets') (if category.name '==' 'EZGO Charge Meters') (if category.name '==' 'EZGO Receptacles') (if category.name '==' 'EZGO Relays & Timers') (if category.name '==' 'EZGO Misc. Battery & Charger Parts') (if category.name '==' 'EZGO Battery & Charger Parts') (if category.name '==' 'EZGO Golf Cart Batteries') (if category.name '==' 'EZGO Battery Maintainers') (if category.name '==' 'EZGO Body') (if category.name '==' 'EZGO Bumpers, Cowls & Panels') (if category.name '==' 'EZGO Brush Guards') (if category.name '==' 'EZGO Diamond Plate') (if category.name '==' 'EZGO Fender Flares') (if category.name '==' 'EZGO Nerf Bars') (if category.name '==' 'EZGO Rocker Panels') (if category.name '==' 'EZGO Brakes') (if category.name '==' 'EZGO Brake Cables') (if category.name '==' 'EZGO Brake Drums') (if category.name '==' 'ZGO Brake Pads') (if category.name '==' 'EZGO Brake Shoes') (if category.name '==' 'EZGO Misc. Brake Parts') (if category.name '==' 'EZGO Cargo & Storage') (if category.name '==' 'EZGO Utility/Cargo Boxes') (if category.name '==' 'EZGO Clay Baskets') (if category.name '==' 'EZGO Roof Racks') (if category.name '==' 'EZGO Storage Trays') (if category.name '==' 'EZ Go Golf Cart Chargers') (if category.name '==' 'EZGO Controllers') (if category.name '==' 'EZGO New Controllers') (if category.name '==' 'EZGO Rebuilt Controllers') (if category.name '==' 'EZGO Controller Parts') (if category.name '==' 'EZGO Enclosures & Covers') (if category.name '==' 'EZGO Enclosures') (if category.name '==' 'EZGO Storage Covers') (if category.name '==' 'EZGO Floor Mats') (if category.name '==' 'EZGO Gas Parts') (if category.name '==' 'EZGO Accelerators') (if category.name '==' 'EZGO Air Filters, Fuel Filters & Oil Filters') (if category.name '==' 'EZGO Bearings & Seals') (if category.name '==' 'EZGO Carburetors') (if category.name '==' 'EZGO Drive Belts & Generator Belts') (if category.name '==' 'EZGO Gas Motors') (if category.name '==' 'EZGO Gas Tanks & Gas Caps') (if category.name '==' 'EZGO Clutches') (if category.name '==' 'EZGO Fuel Pumps') (if category.name '==' 'EZGO Generators & Starters') (if category.name '==' 'EZGO High Speed Gears') (if category.name '==' 'EZGO Mufflers') (if category.name '==' 'EZGO Piston Assemblies') (if category.name '==' 'EZGO Solenoids') (if category.name '==' 'EZGO Speed Sensors') (if category.name '==' 'EZGO Valves & Gaskets') (if category.name '==' 'EZGO Fuel Pumps') (if category.name '==' 'EZGO Golf Accessories') (if category.name '==' 'EZGO Ball Washers') (if category.name '==' 'EZGO Coolers') (if category.name '==' 'EZGO Golf Bag Attachments') (if category.name '==' 'EZGO Sand Bottles') (if category.name '==' 'EZGO Keys & Key Switches') (if category.name '==' 'EZGO Keys') (if category.name '==' 'EZGO Key Switches') (if category.name '==' 'EZGO Lift Kits') (if category.name '==' 'EZ Go Golf Cart Manuals') (if category.name '==' 'EZGO Speed Control Parts') (if category.name '==' 'EZGO Steering Parts') (if category.name '==' 'EZGO Suspension')  (if category.name '==' 'EZGO Axles') (if category.name '==' 'EZGO Bushings') (if category.name '==' 'EZGO Leaf Springs') (if category.name '==' 'EZGO Nuts, Bolts, Washers, Pins & Rivets') (if category.name '==' 'EZGO Shocks') (if category.name '==' 'EZGO Struts') (if category.name '==' 'EZGO Misc. Suspension Parts') (if category.name '==' 'EZ GO Windshields') (if category.name '==' 'EZGO Windshield Accessories & Parts')}}
+                  <div id="ysw_ezgo"></div>
+                  {{else}}
+                  {{#or (if category.name '==' 'Yamaha Golf Cart Parts & Accessories') (if category.name '==' 'Yamaha Golf Cart Battery & Charger Parts') (if category.name '==' 'Yamaha Golf Cart Batteries') (if category.name '==' 'Yamaha Golf Cart Battery Cables') (if category.name '==' 'Yamaha Golf Cart Battery Maintainers') (if category.name '==' 'Yamaha Golf Cart Battery Hold Down Plates & Rods') (if category.name '==' 'Yamaha Golf Cart Charge Meters') (if category.name '==' 'Yamaha Golf Cart Plugs & Cord Sets') (if category.name '==' 'Yamaha Golf Cart Receptacles') (if category.name '==' 'Yamaha Golf Cart Relays & Timers') (if category.name '==' 'Yamaha Golf Cart Misc. Battery & Charger Parts') (if category.name '==' 'Yamaha Golf Cart Body') (if category.name '==' 'Yamaha Golf Cart Bumpers, Cowls & Panels') (if category.name '==' 'Yamaha Golf Cart Brush Guards') (if category.name '==' 'Yamaha Golf Cart Diamond Plate') (if category.name '==' 'Yamaha Golf Cart Fender Flares') (if category.name '==' 'Yamaha Golf Cart Nerf Bars') (if category.name '==' 'Yamaha Golf Cart Rocker Panels') (if category.name '==' 'Yamaha Golf Cart Brakes') (if category.name '==' 'Yamaha Golf Cart Brake Cables') (if category.name '==' 'Yamaha Golf Cart Brake Drums') (if category.name '==' 'Yamaha Golf Cart Brake Pads') (if category.name '==' 'Yamaha Golf Cart Brake Shoes') (if category.name '==' 'Yamaha Golf Cart Misc. Brake Parts') (if category.name '==' 'Yamaha Battery Chargers') (if category.name '==' 'Yamaha Golf Cart Controllers') (if category.name '==' 'Yamaha Golf Cart New Controllers') (if category.name '==' 'Yamaha Golf Cart Rebuilt Controllers') (if category.name '==' 'Yamaha Golf Cart Controller Parts') (if category.name '==' 'Yamaha Golf Cart Floor Mats') (if category.name '==' 'Yamaha Golf Cart Gas Parts') (if category.name '==' 'Yamaha Golf Cart Accelerators') (if category.name '==' 'Yamaha Golf Cart Air, Fuel & Oil Filters') (if category.name '==' 'Yamaha Golf Cart Bearings & Seals') (if category.name '==' 'Yamaha Golf Cart Carburetors') (if category.name '==' 'Yamaha Golf Cart Clutches') (if category.name '==' 'Yamaha Golf Cart Drive Belts & Generator Belts') (if category.name '==' 'Yamaha Golf Cart Fuel Pumps') (if category.name '==' 'Yamaha Golf Cart Gas Motors') (if category.name '==' 'Yamaha Golf Cart Gas Tanks & Gas Caps') (if category.name '==' 'Yamaha Golf Cart Generators & Starters') (if category.name '==' 'Yamaha Golf Cart High Speed Gears') (if category.name '==' 'Yamaha Golf Cart Igniters & Ignition Coils') (if category.name '==' 'Yamaha Golf Cart Mufflers') (if category.name '==' 'Yamaha Golf Cart Valves & Gaskets') (if category.name '==' 'Yamaha Golf Cart Solenoids') (if category.name '==' 'Yamaha Golf Cart Piston Assemblies') (if category.name '==' 'Yamaha Golf Cart Speed Sensors') (if category.name '==' 'Yamaha Golf Cart Lift Kits') (if category.name '==' 'Yamaha Golf Cart Manuals') (if category.name '==' 'Yamaha Golf Cart Mirrors') (if category.name '==' 'Yamaha Golf Cart Speed Control Parts') (if category.name '==' 'Yamaha Golf Cart Suspension') (if category.name '==' 'Yamaha Golf Cart Bushings') (if category.name '==' 'Yamaha Nuts, Bolts, Washers, Pins & Rivets') (if category.name '==' 'Yamaha Golf Cart Shocks') (if category.name '==' 'Yamaha Golf Cart Struts') (if category.name '==' 'Yamaha Golf Cart Misc. Suspension Parts') (if category.name '==' 'Yamaha Golf Cart Tops') (if category.name '==' 'Yamaha Golf Cart Windshields') (if category.name '==' 'Yamaha Golf Cart Windshield Accessories & Parts') (if category.name '==' 'Yamaha Golf Cart Struts') (if category.name '==' 'Yamaha Seat Covers & Cushions') (if category.name '==' 'Yamaha Golf Cart Cargo & Storage') (if category.name '==' 'Yamaha Golf Cart Roof Racks') (if category.name '==' 'Yamaha Golf Cart Enclosures & Covers') (if category.name '==' 'Yamaha Golf Cart Enclosures') (if category.name '==' 'Yamaha Golf Cart Storage Covers') (if category.name '==' 'Yamaha Golf Cart Storage Trays') (if category.name '==' 'Yamaha Golf Cart Utility/Cargo Boxes')}}
+                  <div id="ysw_yamaha"></div>
+                  {{else}}
+                  <div id="ysw_club_car"></div>
+                  <div id="ysw_ezgo"></div>
+                  <div id="ysw_yamaha"></div>
+                  {{/or}}
+                  {{/or}}
+                  {{/or}}
+                  <div class="ysw_step_1_bottom">
+                      <div id="ysw_other">Other</div> or
+                      <div id="ysw_dont_know">I don't know</div>
+                  </div>
+              </div>
+              <select id="ysw_filter_make" style="display:none;">
+                  <option value="">Select Your Make</option>
+                  <option value="Other">Other</option>
+                  <option value="I don't know">I don't know</option>
+              </select>
+          </div>
+          <div class="ysw_filter_step_2 step step_disabled" style="display: none;">
+              <div class="step-title">Now, Select your model and year.</div>
+              <select id="ysw_filter_model" disabled>
+                  <option value="">Select Your Model</option>
+                  <option value="I don't know">I don't know</option>
+              </select>
+          </div>
+
+          <div class="ysw_filter_step_3 step step_disabled" style="display: none;">
+              <div class="step-title"></div>
+              <select id="ysw_filter_year" disabled>
+                  <option value="">Select Your Year</option>
+                  <option value="I don't know">I don't know</option>
+              </select>
+              <div class="year-help"></div>
+          </div>
+      </div>
+        <div class="ysw_fa_submit_container" style="display: none;">
+            <button type="button" id="ysw_filter_submit">Submit</button>
+        </div>
+    </div>
+    <div class="ysw_fa_locked_view">
+        <div class="ysw_fa_locked_title">Showing parts that fit:</div>
+        <div class="ysw_fa_selection"><span></span></div>
+        <div class="ysw_fa_options"><a class="change">Change</a> or <a class="remove">Remove</a> Cart</a></div>
+    </div>
+    <div class="ysw_fa_error_message">
+        <div class="ysw_fa_message"></div>
+        <ul class="ysw_fa_options">
+            <li><a>Previous Page </a> or <a class="remove">Remove</a> Your Golf Cart</a></li>
+            <li><!--<a class="change">Change</a>--> </li>
+        </ul>
+    </div>
+</div>

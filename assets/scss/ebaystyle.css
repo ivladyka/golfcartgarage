@@ -1,0 +1,16 @@
+.header-phone
+{
+   font-size: 14pt;
+   text-align: center;
+   width: 200px;
+   float: left;
+   margin-left: 20px;
+   margin-top: 10px;
+}
+.header-phone-span{
+   background-color: rgb(255, 255, 255); 
+   color: rgb(0, 102, 203); 
+   font-family: RobotoG, Helvetica, Arial, Helvetica, sans-serif; 
+   font-size: 28px; 
+   font-weight: 700;
+}

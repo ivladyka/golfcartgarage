@@ -1,0 +1,76 @@
+<meta itemprop="sku" content="{{ product.sku }}" />
+<header class="header" role="banner">
+    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+        <span class="mobileMenu-toggleIcon"><span>Menu</span></span>
+    </a>
+    <div class="navUser-wrap">
+        {{> components/common/navigation}}
+    </div>
+
+    <div class="header-logo header-logo--left">
+        <div class="header-left">
+            <div class="logo-wrap">
+                {{> components/common/store-logo}}
+            </div>
+            <div class="headerman">
+                <img class="lazyload"  src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/headerman1.png'}}">
+            </div>
+              <div class="headerphone">
+                <span>Talk to a real person <br/><strong>800.401.2934</strong></span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="header-right-top">
+            <div class="headerphone">
+                <span>Talk to a real person <br/><strong>800.401.2934</strong></span>
+            </div>
+            <ul class="navUser-section navUser-section--alt">
+                {{#if customer.store_credit.value '>' 0}}
+                    <li class="navUser-item">
+                        <a class="navUser-action navUser-action--storeCredit"
+                           data-dropdown="storeCredit-dropdown"
+                           data-options="align:bottom"
+                           href="{{urls.cart}}">
+                                <span class="navUser-action-divider">{{lang 'common.store_credit_overview' credit=customer.store_credit.formatted}}</span>
+                        </a>
+                        <div class="dropdown-menu" id="storeCredit-dropdown" data-dropdown-content aria-hidden="true">
+                            {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
+                        </div>
+                    </li>
+                {{/if}}
+                 <li class="navUser-item navUser-item--cart">
+                    <a class="navUser-action"
+                        data-cart-preview
+                        /*data-dropdown="cart-preview-dropdown"*/
+                        data-options="align:right"
+                        href="{{urls.cart}}">
+                  
+                     <i class="cart-icon" aria-hidden="true"></i> <div class="countPill-div"> <div class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</div></div>
+                    </a>
+                    <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
+                </li>
+            </ul>
+            <div class="quickSearchWrap" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
+                {{> components/common/quick-search}}
+            </div>
+            {{> components/common/currency-selector}}
+            </div>
+         {{{region name="header_bottom"}}}
+                    <div class="main-nav-outer-wrap">
+                     <div class="navPages-container" id="menu" data-menu>
+                            {{> components/common/navigation-menu}}
+                        </div>
+                    </div>
+        </div>
+    </div>
+       <div class="header-mob-phone-section"><a href="tel:+1-800-401-2934">Call 800.401.2934</a></div>   
+</header>
+
+
+{{#if banners.top}}
+<div class="banners" data-banner-location="top">
+    <div class="banner">
+        {{{limit banners.top 1}}}
+    </div>
+</div>
+{{/if}}

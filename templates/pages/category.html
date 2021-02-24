@@ -1,0 +1,114 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{#partial "head"}}
+{{#if pagination.category.previous}}
+<link rel="prev" href="{{pagination.category.previous}}">
+{{/if}}
+{{#if pagination.category.next}}
+<link rel="next" href="{{pagination.category.next}}">
+{{/if}}
+{{/partial}}
+{{#partial "customfooterscripts"}}
+<script>
+    (function e() { var e = document.createElement("script"); e.type = "text/javascript", e.async = true, e.onload = myInit, e.src = "//cdn1.stamped.io/files/widget.min.js"; var t = document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e, t) })();
+
+    function myInit() {
+        StampedFn.init({
+            apiKey: 'pubkey-sD324q3bP27h54ANRpL0C56e23U8g7', // replace include # (hash)
+            storeUrl: 'www.golfcartgarage.com' // replace include # (hash), without https:// (e.g. www.domain.com)
+        });
+    }
+</script>
+<!--<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1342399,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>-->
+{{/partial}}
+{{#partial "page"}}
+<div class="page categorypage">
+    {{#if category.faceted_search_enabled}}
+    <div class="page-sidebar shopbypricevisibility">
+        {{> components/make_model_year_filter}}
+        <aside id="faceted-search-container">
+            {{> components/category/sidebar}}
+        </aside>
+    </div>
+    {{else if category.shop_by_price}}
+    {{#if theme_settings.shop_by_price_visibility}}
+    <div class="page-sidebar shopbypricevisibility">
+        {{> components/make_model_year_filter}}
+        <aside id="faceted-search-container">
+            {{> components/category/sidebar}}
+        </aside>
+    </div>
+
+    {{/if}}
+    {{/if}}
+    <div class="page-content">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        <div class="category-description-wrapper">
+            {{{category.description}}}
+        </div>
+        <div class="category-page-search">
+            <div class="category-page-search-title">ALREADY KNOW WHAT YOU'RE LOOKING FOR? TRY SEARCHING HERE!</div>
+            {{{ snippet "forms_search"}}}
+            <form class="form" action="{{urls.search}}">
+                <fieldset class="form-fieldset">
+                    <div class="form-field">
+                        <input type="hidden" name="list_all" value="year">
+                        <label class="is-srOnly" for="search_query">{{lang "search.quick_search.input_label"}}</label>
+                        <input class="form-input" data-search-quick name="search_query" id="search_query" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="Search Our Store" autocomplete="off">
+                        <button type="submit" class="form-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </fieldset>
+            </form>
+            <!--   <section class="quickSearchResults" data-bind="html: results"></section>-->
+        </div>
+        <h1 class="page-heading">{{category.name}}</h1>
+        <main id="product-listing-container">
+            <!-- 3 curly brackets category.description three curly brackets -->
+            {{#if theme_settings.show_subcategories}}
+            {{#if category.subcategories}}
+            <div class="sidebarBlock page-content-subcategories">
+                <h5 class="sidebarBlock-heading">Subcategories:</h5>
+                <ul class="navList">
+                    {{#each category.subcategories}}
+                    <li class="navList-item">
+                        <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}">
+                            <div class="image-wrap{{#unless image}} image-placeholder{{/unless}}">
+                                {{#if image}}
+                                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image}}" alt="{{image.alt}}" title="{{image.alt}}">
+                                {{else}}
+                                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'assets/img/BrandDefault.gif'}}" alt="{{image.alt}}" title="{{image.alt}}">
+                                {{/if}}
+                            </div>
+                            <span>{{name}}</span>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/if}}
+            {{/if}}
+            {{{snippet 'categories'}}}
+            {{#if category.products}}
+            {{> components/category/product-listing}}
+            {{else}}
+            <p>{{lang 'categories.no_products'}}</p>
+            {{/if}}
+        </main>
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}
