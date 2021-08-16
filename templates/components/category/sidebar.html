@@ -1,0 +1,106 @@
+
+    <nav class="{{#if category.faceted_search_enabled}}facetedSearch-enabled{{/if}}">
+        {{#if category.subcategories}}
+        {{#if theme_settings.subcategories_left_column}}
+        <div class="facetedSearch sidebarBlock">
+            <a href="#subcategoryList" role="button" class="{{#if category.faceted_search_enabled}}facetedSearch-toggle{{/if}} toggleLink toggleSidebarBlock button" data-collapsible>
+                <span class="facetedSearch-toggle-indicator">
+                    <span class="toggleLink-text toggleLink-text--on">
+                        Hide subcategories
+                        <i class="icon" aria-hidden="true">
+                            <svg><use xlink:href="#icon-chevron-down" /></svg>
+                        </i>
+                    </span>
+                    <span class="toggleLink-text toggleLink-text--off">
+                        Show subcategories
+                        <i class="icon" aria-hidden="true">
+                            <svg><use xlink:href="#icon-chevron-down" /></svg>
+                        </i>
+                    </span>
+                </span>
+            </a>
+            <div id="subcategoryList" class="facetedSearch-navList blocker-container">
+                <div class="accordion accordion--navList">
+                    <h5 class="sidebarBlock-heading">{{category.name}}</h5>
+                    <ul class="navList">
+                        {{#each category.subcategories}}
+                        <li class="navList-item">
+                            <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="blocker" style="display: none;"></div>
+            </div>
+        </div>
+        {{/if}}
+        {{/if}}
+        {{#if template '!==' 'pages/custom/category/category-nofilters'}}
+        {{#if category.faceted_search_enabled}}
+
+        <div class="te" id="ysw-hidden-available-filters" style="display:none">
+            {{#any facets visible=true}}
+            {{#each facets}}
+            {{#if facet '===' 'model'}}
+            <ul data-filter-name="model">
+                {{#each items}}
+                <li>{{title}}</li>
+                {{/each}}
+            </ul>
+            {{else if facet '===' 'make'}}
+            <ul data-filter-name="make">
+                {{#each items}}
+                <li>{{title}}</li>
+                {{/each}}
+            </ul>
+            {{else if facet '===' 'year'}}
+            <ul data-filter-name="year">
+                {{#each items}}
+                <li>{{title}}</li>
+                {{/each}}
+            </ul>
+            {{/if}}
+            {{/each}}
+            {{/any}}
+        </div>
+        {{> components/faceted-search/index category}}
+
+        {{else if theme_settings.shop_by_price_visible}}
+
+        {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
+        {{/if}}
+        {{/if}}
+      <!--  {{#if category.description}}
+        <div id="facetedSearch" class="facetedSearch sidebarBlock sidebarCategoryBlock">       
+            <div class="facetedSearch-navList blocker-container" style="display:block !important">
+                <div class="accordion accordion--navList">
+                    <div class="accordion-block">
+                        <div class="accordion-navigation toggleLink {{#unless ../start_collapsed }} is-open {{/unless}}"
+                             role="button"
+                             data-collapsible="#facetedSearch-content--Categories">
+                            <h5 class="accordion-title">
+                                Categories
+                            </h5>
+                            <div class="accordion-navigation-actions">
+                                {{#if selected}}
+                                <a href="{{ remove_url }}" class="facetedSearch-clearLink" data-faceted-search-facet>{{lang 'search.faceted.clear'}}</a>
+                                {{/if}}
+                                <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                                    <use xlink:href="#icon-add" />
+                                </svg>
+                                <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                                    <use xlink:href="#icon-remove" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="facetedSearch-content--Categories" class="accordion-content {{#unless ../start_collapsed }} is-open {{/unless}}">
+                            <div class="category-description-wrapper">
+                                {{{category.description}}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}-->
+    </nav>

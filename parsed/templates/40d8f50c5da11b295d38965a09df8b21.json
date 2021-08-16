@@ -1,0 +1,4 @@
+{
+  "components/common/body": "<div class=\"body {{#if template_file '===' 'pages/home'}}home{{/if}}\">\n    {{#block \"hero\"}} {{/block}}\n     {{#block \"aboutusbluesection\"}} {{/block}}\n    <div class=\"container\">\n        {{#block \"page\"}} {{/block}}\n    </div> \n      {{#block \"meettheteam\"}} {{/block}}\n    {{#block \"instagramsection\"}} {{/block}}\n    \n    {{> components/common/modal}}\n</div>\n",
+  "components/common/modal": "<div id=\"modal\" class=\"modal\" data-reveal data-prevent-quick-search-close>\n    <a href=\"#\" class=\"modal-close\" aria-label=\"{{lang 'common.close'}}\" role=\"button\">\n        <span aria-hidden=\"true\">&#215;</span>\n    </a>\n    <div class=\"modal-content\"></div>\n    <div class=\"loadingOverlay\"></div>\n</div>\n"
+}

@@ -1,0 +1,496 @@
+<div class="productView" data-event-type="product" data-entity-id="{{product.id}}" data-product-name="{{product.title}}"  data-product-category="" data-product-brand="{{product.brand.name}}" data-product-price="{{#if product.price.with_tax}}{{product.price.with_tax.value}}{{else}}{{product.price.without_tax.value}}{{/if}}">
+        {{#each product.reviews.messages}}
+        {{#if error}}
+            {{> components/common/alert-error error}}
+        {{/if}}
+        {{#if success}}
+            {{> components/common/alert-success success}}
+        {{/if}}
+    {{/each}}
+
+    <section class="productView-images" data-image-gallery>
+        <figure class="productView-image"
+            data-image-gallery-main
+            data-zoom-image="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}"
+            >
+            <div class="productView-img-container">
+                <a href="{{getImage product.main_image 'zoom_size' (cdn theme_settings.default_image_product)}}">
+                    <img class="productView-image--default lazyload"
+                         data-sizes="auto"
+                         src="{{cdn 'img/loading.svg'}}"
+                         data-src="{{getImage product.main_image 'product_size' (cdn theme_settings.default_image_product)}}"
+                         alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}" data-main-image>
+                </a>
+            </div>
+        </figure>
+
+        {{#if product.videos.list.length}}
+            <ul class="c productView-thumbnails productView-thumbnails-mob"{{#gt product.images.length 3}} data-slick='{
+                "infinite": false,
+                "mobileFirst": true,
+                "slidesToShow": 4,
+                "slidesToScroll": 1,
+                "dots": false
+            }'{{/gt}}>
+                <li class="productView-thumbnail video_thumb " >
+                    <a href="#previewModal" data-reveal-id="previewModal" class="productView-thumbnail-link" data-image-gallery-item style="border-color:black">
+                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="//i.ytimg.com/vi/{{product.videos.featured.id}}/default.jpg" alt="{{product.videos.featured.alt}}" title="test">
+                    </a>
+                </li>
+        {{else}}
+            <ul class="d productView-thumbnails productView-thumbnails-mob"{{#gt product.images.length 4}} data-slick='{
+                "infinite": false,
+                "mobileFirst": true,
+                "slidesToShow": 4,
+                "slidesToScroll": 1,
+                "dots": false
+            }'{{/gt}}>
+
+        {{/if}}
+            {{#each product.images}}
+                <li class="productView-thumbnail">
+                    <a
+                        class="productView-thumbnail-link"
+                        href="{{getImage this 'product_size' (cdn ../theme_settings.default_image_product)}}"
+                        data-image-gallery-item
+                        data-image-gallery-new-image-url="{{getImage this 'product_size' (cdn ../theme_settings.default_image_product)}}"
+                        data-image-gallery-zoom-image-url="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}" style="border-color:black">
+                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage this 'productview_thumb_size' (cdn ../theme_settings.default_image_product)}}" alt="{{this.alt}}" title="{{this.alt}}">
+                    </a>
+                </li>
+
+            {{/each}}
+
+            </ul>
+        {{#if product.videos.list.length}}
+            <ul class="a productView-thumbnails"{{#gt product.images.length 3}} data-slick='{
+                "infinite": false,
+                "mobileFirst": true,
+                "slidesToShow": 4,
+                "slidesToScroll": 1,
+                "dots": false
+            }'{{/gt}}>
+                <li class="productView-thumbnail video_thumb ">
+                    <a href="#previewModal" data-reveal-id="previewModal" class="productView-thumbnail-link" data-image-gallery-item style="border-color:black">
+                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="//i.ytimg.com/vi/{{product.videos.featured.id}}/default.jpg" alt="{{product.videos.featured.alt}}" title="test">
+                    </a>
+                </li>
+        {{else}}
+            <ul class="b productView-thumbnails"{{#gt product.images.length 4}} data-slick='{
+                "infinite": false,
+                "mobileFirst": true,
+                "slidesToShow": 4,
+                "slidesToScroll": 1,
+                "dots": false
+            }'{{/gt}}>
+
+        {{/if}}
+            {{#each product.images}}
+                <li class="productView-thumbnail">
+                    <a
+                        class="productView-thumbnail-link"
+                        href="{{getImage this 'product_size' (cdn ../theme_settings.default_image_product)}}"
+                        data-image-gallery-item
+                        data-image-gallery-new-image-url="{{getImage this 'product_size' (cdn ../theme_settings.default_image_product)}}"
+                        data-image-gallery-zoom-image-url="{{getImage this 'zoom_size' (cdn ../theme_settings.default_image_product)}}" style="border-color:black">
+                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage this 'productview_thumb_size' (cdn ../theme_settings.default_image_product)}}" alt="{{this.alt}}" title="{{this.alt}}">
+                    </a>
+                </li>
+            {{/each}}
+            </ul>
+
+    </section>
+    <section class="productView-details">
+        <div class="productView-product">
+          <div class="productView-title-block"> <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
+          <div class="price-match-pop-up" style="display:none">
+             <h4> We Price Match!</h4>
+              <img src="{{cdn 'img/price1-icon.svg'}}"/>
+             <p> Give our sales team a call at <b>800.401.2934</b> (Toll Free) and we'll match any competitor's price. For more details, <a href="/about-us#price-match" target="_blank">click here</a>. </p>
+          </div>
+          </div>
+            <div class="productpageinfosection">
+                <div class="productView-product-leftblock">
+                <div class="productView-reviewsstampled"></div>
+                {{#if product.brand}}
+                    <h2 class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
+                        <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
+                    </h2>
+                {{/if}}
+               {{#if product.sku}}
+                    <div class="productSKU">
+                        <dt class="productView-info-name">{{lang 'products.sku'}}</dt>
+                        <dd class="productView-info-value" data-product-sku="{{product.sku}}">{{product.sku}}
+
+                    </dd>
+          <div class="price-match-pop-up-sku" style="display:none">
+                             <h4> We Price Match!</h4>
+                              <img src="{{cdn 'img/price1-icon.svg'}}"/>
+                             <p> Give our sales team a call at <b>800.401.2934</b> (Toll Free) and we'll match any competitor's price. For more details, <a href="/about-us#price-match" target="_blank">click here</a>. </p>
+                          </div>
+                    </div>
+                {{else}}
+                    {{#if product.options}}
+                        <div class="productSKU">
+                            <dt class="productView-info-name">{{lang 'products.sku'}}</dt>
+                            <dd class="productView-info-value" data-product-sku="{{product.sku}}">{{product.sku}}</dd>
+                        </div>
+                    {{/if}}
+                {{/if}}
+                    {{#if product.price.with_tax}}
+                             {{#if product.price.with_tax.value '>=' 125}}
+                                 <div class="free-ship">
+                                    <dt class="productView-info-name">Shipping:</dt>
+                                    <dd class="productView-info-value" >FREE Shipping</dd>
+                                </div>
+                            {{/if}}
+                        {{/if}}
+                       {{#if product.price.without_tax}}
+                           {{#if product.price.without_tax.value '>=' 125}}
+                               <div class="free-ship">
+                                    <dt class="productView-info-name">Shipping:</dt>
+                                    <dd class="productView-info-value">FREE Shipping</dd>
+                                </div>
+                            {{/if}}
+                       {{/if}}
+               <!-- {{#if product.sku '!==' ''}}
+                   <div class="productSKU">
+                        <dt class="productView-info-name">{{lang 'products.sku'}}</dt>
+                        <dd class="productView-info-value" data-product-sku="{{product.sku}}">{{product.sku}}</dd>
+                    </div>
+                    {{/if}}-->
+
+                {{#if product.condition}}
+                    <div>
+                        <dt class="productView-info-name">{{lang 'products.condition'}}</dt>
+                        <dd class="productView-info-value">{{product.condition}}</dd>
+                    </div>
+                {{/if}}
+                {{#if product.availability}}
+                    <div>
+                        <dt class="productView-info-name">{{lang 'products.availability'}}</dt>
+                        <dd class="productView-info-value">{{product.availability}}</dd>
+                    </div>
+                {{/if}}
+                {{#if product.shipping}}
+                    {{#unless product.shipping.calculated}}
+                        {{#if product.shipping.price.value '===' 0}}
+                            <div class="productView-shipping productView-shipping--free">
+                                <dt class="productView-info-name hide-label">{{lang 'products.shipping'}}</dt>
+                                <dd class="productView-info-value uppercase"><strong>{{lang 'products.shipping_free'}}</strong></dd>
+                            </div>
+                        {{else}}
+                            <div class="productView-shipping">
+                                <dt class="productView-info-name">Fixed Shipping Cost: </dt>
+                                <dd class="productView-info-value">{{product.shipping.price.formatted}}</dd>
+                            </div>
+                        {{/if}}
+                    {{/unless}}
+                {{/if}}
+                {{#if product.call_for_price}}
+                    <p class="productView-price">
+                        <span>{{product.call_for_price}}</span>
+                    </p>
+                {{/if}}
+                <div class="productView-price">
+                    {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                        {{> components/products/price price=product.price schema_org=schema}}
+                    {{else}}
+                        {{> components/common/login-for-pricing}}
+                    {{/or}}
+                </div>
+                {{#if product.bulk_discount_rates.length}}
+                    <ul>
+                        {{#each product.bulk_discount_rates}}
+                            <li>
+                                {{lang 'products.bulk_pricing.range' min=min max=max}}
+                                {{#if type '===' 'percent'}}
+                                    {{lang 'products.bulk_pricing.percent' discount=discount.formatted}}
+                                {{/if}}
+                                {{#if type '===' 'fixed'}}
+                                    {{lang 'products.bulk_pricing.fixed' discount=discount.formatted}}
+                                {{/if}}
+                                {{#if type '===' 'price'}}
+                                    {{lang 'products.bulk_pricing.price' discount=discount.formatted}}
+                                {{/if}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+                {{{region name="product_below_price"}}}
+                <div class="productView-rating"{{#if product.num_reviews '>' 0}}{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}{{/if}}>
+                    {{#if settings.show_product_rating}}
+                        {{#if product.num_reviews '>' 0}}
+                            {{#if schema}}
+                                <meta itemprop="ratingValue" content="{{product.rating}}">
+                                <meta itemprop="ratingCount" content="{{product.num_reviews}}">
+                                <meta itemprop="reviewCount" content="{{product.num_reviews}}">
+                            {{/if}}
+                        {{/if}}
+                        {{> components/products/ratings rating=product.rating}}
+                        <span class="productView-reviewLink">
+                            {{#if product.num_reviews '>' 0}}
+                                <a href="{{product.url}}#product-reviews">
+                                    {{lang 'products.reviews.link_to_review' total=product.num_reviews}}
+                                </a>
+                            {{else}}
+                                {{lang 'products.reviews.link_to_review' total=product.num_reviews}}
+                            {{/if}}
+                        </span>
+                    {{/if}}
+                    {{#if settings.show_product_reviews}}
+                        <span class="productView-reviewLink">
+                            <a href="{{product.url}}{{#if is_ajax}}#write_review{{/if}}"
+                               {{#unless is_ajax }}data-reveal-id="modal-review-form"{{/unless}}>
+                               {{lang 'products.reviews.new'}}
+                            </a>
+                        </span>
+                        {{> components/products/modals/writeReview}}
+                    {{/if}}
+                </div>
+                {{product.detail_messages}}
+                {{#and product.warranty theme_settings.show_short_desc}}
+                <div class="productView-warranty">
+                    {{{product.warranty}}}
+                </div>
+            {{/and}}
+
+            {{inject "product_mf" product.custom_fields}}
+
+
+         </div>
+                <div class="productView-product-rightblock" >
+                        <div id="stamped-reviews-widget" data-widget-type="site-badge" data-badge-type="badge" style="margin-bottom:20px;"></div>
+                        <span ><strong>YOUR #1 TRUSTED SOURCE</strong> FOR GOLF CART BATTERIES, CHARGERS & ACCESSORIES</span>
+                          <ul class="foot-credit-card-icons">
+                            <li>
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/footer-cc-1.png'}}" alt="Visa">
+                            </li>
+                            <li>
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/footer-cc-2.png'}}" alt="American Express">
+                            </li>
+                            <li>
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}"  data-src="{{cdn 'img/footer-cc-3.png'}}" alt="MasterCard">
+                            </li>
+                            <li>
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/footer-cc-4.png'}}" alt="Discover">
+                            </li>
+                            <li>
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/footer-cc-6.png'}}" alt="Diners Club">
+                            </li>
+                            <li>
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/footer-cc-5.png'}}" alt="PayPal">
+                            </li>
+                            <li class="paypal-credit" >
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}"  data-src="{{cdn 'img/footer-cc-7.png'}}" alt="Paypal Credit">
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="productView-options page-product">
+            {{#if product.release_date }}
+                <p>{{product.release_date}}</p>
+            {{/if}}
+            <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data"
+                  data-cart-item-add>
+                <input type="hidden" name="action" value="add">
+                <input type="hidden" name="product_id" value="{{product.id}}"/>
+                    {{#each product.customizations}}
+                        {{{dynamicComponent 'components/products/customizations'}}}
+                    {{/each}}
+                <div data-product-option-change style="display:none;">
+                    {{#each product.options}}
+                        {{{dynamicComponent 'components/products/options'}}}
+                    {{/each}}
+                </div>
+                {{#if product.event_date}}
+                    {{> components/products/event-date}}
+                {{/if}}
+                <div class="1 form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
+                    <label class="form-label form-label--alternate">
+                        {{lang 'products.current_stock'}}
+                        <span data-product-stock>{{product.stock_level}}</span>
+                    </label>
+                </div>
+                {{> components/products/add-to-cart}}
+                     <div id="bread-checkout-btn"></div>
+                
+                {{#if product.can_purchase}}
+                    
+                {{/if}}
+                {{#if product.out_of_stock}}
+                 <div style="max-width:300px">   {{#if product.out_of_stock_message}}
+                        {{> components/common/alert-error product.out_of_stock_message}}
+                    {{else}}
+                        {{> components/common/alert-error (lang 'products.sold_out')}}
+                    {{/if}}
+                    </div>
+                    <span class="button button--primary button--out-of-stock">Out of Stock</span>
+                {{/if}}
+            </form>
+
+        <!--    {{#if product.warranty}}
+                <div class="short-desc-under-atc">
+                    {{{product.warranty}}}
+                </div>
+            {{/if}}
+            {{#and (if settings.show_wishlist '===' true) (if 1 '===' 2)}}
+                {{> components/common/wishlist-dropdown}}
+            {{/and}}
+            {{#if product.gift_wrapping_available}}
+            <div>
+                <dt class="productView-info-name">{{lang 'products.gift_wrapping'}}</dt>
+                <dd class="productView-info-value">{{lang 'products.gift_wrapping_available'}}</dd>
+            </div>
+            {{/if}}-->
+        </div>
+  <div class="productView-product-rightblock-mob" >
+                    <div id="stamped-reviews-widget" data-widget-type="site-badge" data-badge-type="badge" style="margin-bottom:20px;"></div>
+                    <span ><strong>YOUR #1 TRUSTED SOURCE</strong> FOR GOLF CART BATTERIES, CHARGERS & ACCESSORIES</span>
+                      <ul class="foot-credit-card-icons">
+                        <li>
+                            <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/footer-cc-1.png'}}" alt="Visa">
+                        </li>
+                        <li>
+                            <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/footer-cc-2.png'}}" alt="American Express">
+                        </li>
+                        <li>
+                            <img class="lazyload" src="{{cdn 'img/loading.svg'}}"  data-src="{{cdn 'img/footer-cc-3.png'}}" alt="MasterCard">
+                        </li>
+                        <li>
+                            <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/footer-cc-4.png'}}" alt="Discover">
+                        </li>
+                        <li>
+                            <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/footer-cc-6.png'}}" alt="Diners Club">
+                        </li>
+                        <li>
+                            <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/footer-cc-5.png'}}" alt="PayPal">
+                        </li>
+                        <li class="paypal-credit" >
+                            <img class="lazyload" src="{{cdn 'img/loading.svg'}}"  data-src="{{cdn 'img/footer-cc-7.png'}}" alt="Paypal Credit">
+                        </li>
+                    </ul>
+            </div>
+
+        <div class="make-modal-product-container">
+                <div class="modal-fit-prediction">
+                    <div class="success">
+                        <div class="mfp-icon">
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                        <span>This product fits your Golf Cart</span>
+                    </div>
+                    <div class="warning">
+                        <div class="mfp-icon">
+                            <i class="fa fa-exclamation-triangle"></i>
+                        </div>
+                        <span>Sorry! This doesn't fit your Golf Cart</span>
+                    </div>
+                    <div class="your-choice">
+                        <div class="make">Make: <span></span></div>
+                        <div class="model">Model: <span></span></div>
+                        <div class="year">Year: <span></span></div>
+                    </div>
+                    <div class="show-options-btn">
+                        <a href="/#menu" class="change">Change Golf Cart</a>
+                    </div>
+                </div>
+            </div>
+             {{#if product.warranty}}
+                <div class="short-desc-under-atc">
+                    {{{product.warranty}}}
+                </div>
+            {{/if}}
+            {{#and (if settings.show_wishlist '===' true) (if 1 '===' 2)}}
+                {{> components/common/wishlist-dropdown}}
+            {{/and}}
+            {{#if product.gift_wrapping_available}}
+            <div>
+                <dt class="productView-info-name">{{lang 'products.gift_wrapping'}}</dt>
+                <dd class="productView-info-value">{{lang 'products.gift_wrapping_available'}}</dd>
+            </div>
+            {{/if}}
+        {{> components/common/share url=product.url title=product.title image=(getImage product.main_image 'full')}}
+        {{{snippet 'product_details'}}}</div>
+
+
+    </section>
+</div>
+
+<div id="previewModal" class="modal modal--smal" data-reveal>
+    <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
+        <span aria-hidden="true">&#215;</span>
+    </a>
+    <div class="modal-content iframeParent">
+        <iframe class="iframeClass" width="500" height="360" src="https://www.youtube.com/embed/{{product.videos.featured.id}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!--<div role="tabpanel" aria-hidden="true" class="tab-content has-jsContent feturedimage" id="tab-videos">-->
+        <!--    {{> components/products/videos product.videos}}-->
+        <!--</div>-->
+    </div>
+    <div class="loadingOverlay"></div>
+</div>
+<!--{{#if product.videos.list.length}}-->
+<!--    <div role="tabpanel" aria-hidden="true" class="tab-content has-jsContent" id="tab-videos">-->
+<!--        {{> components/products/videos product.videos}}-->
+<!--    </div>-->
+<!--{{/if}}-->
+
+<style>
+    div.feturedimage {
+        height: auto !important;
+        visibility: visible !important;
+        overflow: visible !important;
+    }
+    div#previewModal {
+        margin: 0;
+        background: #3d3d3d;
+    }
+    div#previewModal a.modal-close {
+        color: #333;
+        background: #fff;
+        border-radius: 50%;
+        line-height: 32px;
+    }
+    .ytp-chrome-top-buttons {
+        display: none;
+    }
+    .modal-content.iframeParent {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 56.25%;
+    }
+    .modal-content.iframeParent iframe.iframeClass {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .video_thumb a:after {
+        content: "";
+        background-image: url(../img/youtube-icon.png);
+        width: 71px;
+        height: 38px;
+        background-size: contain;
+        left: 2px;
+        background-position: center;
+        position: absolute;
+        background-repeat: no-repeat;
+        top: 13px;
+        z-index: 9999999;
+    }
+    ul.productView-thumbnails-mob .video_thumb a:after {
+        width: 47px;
+    }
+    .slick-initialized .slick-slide, .slick-slider .slick-list {
+        min-width: auto;
+    }
+    @media (max-width: 768px){
+        .productView-thumbnails {
+            display: none!important;
+        }
+    }
+</style>

@@ -1,0 +1,31 @@
+{{#partial "head"}}
+ {{{stylesheet '/assets/css/page.css'}}}
+{{/partial}}
+
+{{#partial "aboutusbluesection"}}
+<div class="blog-list-header">
+    <div class="container">
+        <div class="blog-list-title">GCG BLOG</div>
+        <div class="mob-blog-menu">
+            <a>CATEGORIES</a>
+            <ul>
+                <li> <a href="/blog/tag/All Posts">All Posts</a></li>
+                <li> <a href="/blog/tag/batteries">Batteries</a></li>
+                <li> <a href="/blog/tag/tires">Tires</a></li>
+                <li> <a href="/blog/tag/accessories">Accessories</a></li>
+                <li> <a href="/blog/tag/maintenance">Maintenance</a></li>
+                <li> <a href="/blog/tag/events">Events</a></li>
+                <li> <a href="/blog/tag/clubcar">Club Car</a></li>
+            </ul>
+        </div>
+    </div>
+</div>   
+ 
+{{/partial}}
+{{#partial "page"}}
+
+<!--{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}-->
+{{> components/blog/post post=blog.post show_tags=true}}
+
+{{/partial}}
+{{> layout/blog-list}}

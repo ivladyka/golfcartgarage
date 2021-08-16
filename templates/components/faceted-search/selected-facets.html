@@ -1,0 +1,70 @@
+<div class="facetedSearch-refineFilters sidebarBlock">
+    <h5 class="sidebarBlock-heading">
+        {{lang 'search.faceted.selected.title'}}
+    </h5>
+
+    {{#if this.items}}
+<ul class="inlineList inlineList--labels">
+    {{#each this.items}}
+
+    {{#if param_name '===' 'model'}}
+    <div style="display:none" class="ysw-hidden-filter-selected" data-filter-name="model">{{ title }}</div>
+    <!--{{#if title '===' 'DS'}}-->
+    <!--<div id="year_id" style="display:none" class="ysw-hidden-filter-selected" data-filter-name="year">2000 (January-June)</div>-->
+    <!--{{/if}}-->
+    {{else if param_name '===' 'make'}}
+    <div style="display:none" class="ysw-hidden-filter-selected" data-filter-name="make">{{ title }}</div>
+    {{else if param_name '===' 'year'}}
+    <div style="display:none" class="ysw-hidden-filter-selected" data-filter-name="year">{{ title }}</div>
+    {{else}}
+
+    <li>
+        <a href="{{ url }}"
+           class="facetLabel"
+           rel="nofollow"
+           data-faceted-search-facet>
+            {{#if facet '===' 'rating'}}
+            {{lang 'search.faceted.selected.rating-label' rating=title}}
+            {{else}}
+            {{ title }}
+            {{/if}}
+
+            <svg class="icon">
+                <use xlink:href="#icon-close" />
+            </svg>
+        </a>
+    </li>
+
+    {{/if}}
+    {{/each}}
+</ul>
+    {{else}}
+        {{lang 'search.faceted.selected.no-filters'}}
+    {{/if}}
+
+    {{#if remove_all_url}}
+       <!-- <a href="{{ remove_all_url }}" data-faceted-search-facet>
+            {{lang 'search.faceted.selected.clear-all'}}
+        </a> -->
+    {{/if}}
+</div>
+<script>
+    function getCookie (name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0;i < ca.length;i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return decodeURIComponent(c.substring(nameEQ.length,c.length));
+		}
+		return null;
+    }
+    if(getCookie('ysw_fa_year')) {
+        var gtc = getCookie('ysw_fa_year');
+			if(gtc == '2000 (January-June)' || gtc == '2000 (July-December)'){
+			    document.getElementById("year_id").innerHTML = gtc;
+			}else{
+			    document.getElementById("year_id").remove();
+			}
+	}
+</script>

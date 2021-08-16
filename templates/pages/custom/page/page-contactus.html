@@ -1,0 +1,319 @@
+{{#partial "head"}}
+ {{{stylesheet '/assets/css/page.css'}}}
+{{/partial}}
+
+{{#if page.id '===' 2}}
+{{#partial "aboutusbluesection"}}
+<div class="contactus-list-header">
+    <div class="container">
+        <div class="contactus-list-title">{{ page.title }}</div>
+          <div class="mob-contactus-menu">
+            <a>QUICK LINKS</a>
+              <ul class="navBar-section account-navigation">
+                  <li><a href="#shipping_and_delivery">Shipping &amp; Delivery</a></li>
+                    <li><a href="#service_guarantee">100% Service Guarantee</a></li>
+                    <li><a href="#zero_hassle_return_policy">Zero-Hassle Return Policy</a></li>
+                    <li><a href="#privacy_and_security">Privacy &amp; Security</a></li>
+                    <li><a href="#payment_methods">Payment Methods</a></li>
+                     <li></hr></li>
+                  <li><a href="/contact-us/"> Tech Support</a></li>
+                  <li><a href="/faq/">Frequently Asked Questions</a></li>
+                  <li><a href="/golf-cart-battery-charger-faq/">Chargers & Batteries FAQs</a></li>
+                  <li><a href="/change-or-cancel-pending-order/">Change Pending Order</a></li>
+                  <li><a href="/policies/">Our Policies</a></li>
+                  <li><a href="/product-returns/">Returns & Replacements</a></li>
+                  <li><a href="/billing-issues/">Billing Issues</a></li>
+                  <li><a href="/were-hiring/">We're Hiring</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{/partial}}
+{{#partial "page"}}
+<main class="page contact-us-page">
+     <div class="contact-us-main-container" style="margin-top:60px;">
+    <nav class="navBar navBar--sub">
+        <ul class="navBar-section account-navigation">
+            <li><h3>QUICK LINKS</h3></li>
+            <li><a href="#shipping_and_delivery">Shipping &amp; Delivery</a></li>
+            <li><a href="#service_guarantee">100% Service Guarantee</a></li>
+            <li><a href="#zero_hassle_return_policy">Zero-Hassle Return Policy</a></li>
+            <li><a href="#privacy_and_security">Privacy &amp; Security</a></li>
+            <li><a href="#payment_methods">Payment Methods</a></li>
+            <li></hr></li>
+            <li><a href="/contact-us/"> Tech Support</a></li>
+            <li><a href="/faq/">Frequently Asked Questions</a></li>
+            <li><a href="/golf-cart-battery-charger-faq/">Chargers & Batteries FAQs</a></li>
+            <li><a href="/change-or-cancel-pending-order/">Change Pending Order</a></li>
+            <li><a href="/policies/">Our Policies</a></li>
+            <li><a href="/product-returns/">Returns & Replacements</a></li>
+            <li><a href="/billing-issues/">Billing Issues</a></li>
+                <li><a href="/were-hiring/">We're Hiring</a></li>
+        </ul>
+    </nav> 
+    <div class="page-content info-page" >    
+  
+        {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+            {{{page.content}}}
+        {{/replace}}
+    </div>
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}</div>
+</main>
+{{/partial}}
+{{else if page.id '===' 7}}
+{{#partial "aboutusbluesection"}}
+<div class="contactus-list-header">
+    <div class="container">
+        <div class="contactus-list-title">{{ page.title }}</div>
+          <div class="mob-contactus-menu">
+            <a>QUICK LINKS</a>
+              <ul class="navBar-section account-navigation">
+                  <li><a href="/contact-us/"> Tech Support</a></li>
+                  <li><a href="/faq/">Frequently Asked Questions</a></li>
+                  <li><a href="/golf-cart-battery-charger-faq/">Chargers & Batteries FAQs</a></li>
+                  <li><a href="/change-or-cancel-pending-order/">Change Pending Order</a></li>
+                  <li><a href="/policies/">Our Policies</a></li>
+                  <li><a href="/product-returns/">Returns & Replacements</a></li>
+                  <li><a href="/billing-issues/">Billing Issues</a></li>
+                      <li><a href="/were-hiring/">We're Hiring</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{/partial}}
+{{#partial "page"}}
+<main class="page contact-us-page">
+     <div class="contact-us-main-container" style="margin-top:60px;">
+    <nav class="navBar navBar--sub">
+        <ul class="navBar-section account-navigation">
+            <li><h3>QUICK LINKS</h3></li>
+            <li><a href="/contact-us/"> Tech Support</a></li>
+            <li><a href="/faq/">Frequently Asked Questions</a></li>
+            <li><a href="/golf-cart-battery-charger-faq/">Chargers & Batteries FAQs</a></li>
+            <li><a href="/change-or-cancel-pending-order/">Change Pending Order</a></li>
+            <li><a href="/policies/">Our Policies</a></li>
+            <li><a href="/product-returns/">Returns & Replacements</a></li>
+            <li><a href="/billing-issues/">Billing Issues</a></li>
+                <li><a href="/were-hiring/">We're Hiring</a></li>
+        </ul>
+    </nav> 
+    <div class="page-content info-page" >    
+  
+        {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+            {{{page.content}}}
+        {{/replace}}
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLScNEpV0VysBw-G2n_2C_QH0lGnPCyqgwr1fjZVWdAyeVdV-Mw/formResponse" target="_self" id="productreturnsForm"       method="POST" style="margin-top:60px">
+              <div class="giveaway-form-row form-row ">
+                     <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Full first name and full last name <small>Required</small></label> 
+                    <input  class="form-input"  id="1484704239"  type="text" name="entry.1484704239" required />
+                    </div>
+               </div>
+                <div class="giveaway-form-row form-row ">
+                     <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Order number <small>Required</small></label> 
+                    <input  class="form-input" id="529806003"  type="number" name="entry.529806003" required />
+                    </div>
+               </div>
+               <div class="giveaway-form-row form-row ">
+                     <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Email address<small>Required</small></label> 
+                    <input  class="form-input" id="1405634165" type="email" name="entry.1405634165" required />
+                    </div>
+               </div>
+                <div class="giveaway-form-row form-row ">
+                 <div class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                       <label class="form-label">By checking "I Agree" you acknowledge that Golf Cart Garage has provided you with the return policy prior to initiating a return or sending an item/order back to us. You acknowledge that you have read and understand the terms of our return policy in it's entirety, including deductions for restocking fees.<small>Required</small></label> 
+                         <input class="form-checkbox"  type="checkbox" name="entry.78955972" id="entry.78955972"  value="I Agree" required>
+                        <label for="entry.78955972" class="form-label"> I Agree</label>
+                </div>
+            </div>
+            
+                <div class="giveaway-form-row form-row ">
+                    <input type="hidden" name="fvv" value="1">
+                    <input type="hidden" name="fbzx" value="-6903252066283891654">
+                    <input type="hidden" name="pageHistory" value="0">
+                    <input id="btnInitiateReturnRequest" class="button button--primary" type="submit" value="Initiate a Return Request" disabled>
+                 </div>
+            </form>
+            <h4 id="productreturnsSuccess" style="display: none; color: Green;">Form Submitted. Thank you!</h4>
+            
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script> 
+<script>
+$(document).ready(function() {
+    $('#productreturnsForm').submit(function (event) 
+    {
+        event.preventDefault();
+        var extraData = {};
+        $('#productreturnsForm').ajaxSubmit({
+            data: extraData,
+            dataType: 'jsonp',  
+            error: function () 
+            {
+                window.location.href = "https://golfcartgarage.returnscenter.com/";
+            }
+        });
+    });
+    $("#productreturnsForm input:checkbox").change(function() 
+    {
+        $("#btnInitiateReturnRequest").prop("disabled", !this.checked);
+    });
+});
+</script>
+        <!--    <a href="https://golfcartgarage.returnscenter.com/" target="_blank">Initiate a Return Request</a>-->
+    </div>
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}</div>
+</main>
+{{/partial}}
+{{else if page.id '===' 23}}
+{{#partial "aboutusbluesection"}}
+<div class="contactus-list-header">
+    <div class="container">
+        <div class="contactus-list-title">{{ page.title }}</div>
+          <div class="mob-contactus-menu">
+            <a>QUICK LINKS</a>
+              <ul class="navBar-section account-navigation">
+                  <li><a href="/contact-us/"> Tech Support</a></li>
+                  <li><a href="/faq/">Frequently Asked Questions</a></li>
+                  <li><a href="/golf-cart-battery-charger-faq/">Chargers & Batteries FAQs</a></li>
+                  <li><a href="/change-or-cancel-pending-order/">Change Pending Order</a></li>
+                  <li><a href="/policies/">Our Policies</a></li>
+                  <li><a href="/product-returns/">Returns & Replacements</a></li>
+                  <li><a href="/billing-issues/">Billing Issues</a></li>
+                      <li><a href="/were-hiring/">We're Hiring</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{/partial}}
+{{#partial "page"}}
+<main class="page contact-us-page">
+     <div class="contact-us-main-container" style="margin-top:60px;">
+    <nav class="navBar navBar--sub">
+        <ul class="navBar-section account-navigation">
+        <!--     <li><h3>Shipping</h3></li>
+            <li><a href="#Canada">Do you ship to Canada or internationally?</a></li>
+            <li><a href="#Alaska">Do you ship to Alaska, Hawaii or Puerto Rico?</a></li>
+            <li><a href="#POBoxes">Do you ship to P.O. Boxes?</a></li>
+            <li><a href="#FreeShipping">Do you offer free shipping?</a></li>
+            <li><a href="#ExpeditedShipping">Do you offer expedited shipping?</a></li>
+            <li><a href="#OrderShip">When will my order ship?</a></li>
+            <li><a href="#HowYouShipOrders">How do you ship orders?</a></li>
+            <li><a href="#OrderDelivered">When will my order be delivered?</a></li>
+            <li><a href="#TrackingInformation">Will I receive tracking information?</a></li>
+            <li><a href="#whereismytrackingnumber">Where is my tracking number?</a></li>
+            <li><a href="#MultipleItems">I ordered multiple items but only received part of my order?</a></li>
+            <li><a href="#Located">Where are you located?</a></li>-->
+            <li><h3>QUICK LINKS</h3></li>
+            <li><a href="/contact-us/"> Tech Support</a></li>
+            <li><a href="/faq/">Frequently Asked Questions</a></li>
+            <li><a href="/golf-cart-battery-charger-faq/">Chargers & Batteries FAQs</a></li>
+            <li><a href="/change-or-cancel-pending-order/">Change Pending Order</a></li>
+            <li><a href="/policies/">Our Policies</a></li>
+            <li><a href="/product-returns/">Returns & Replacements</a></li>
+            <li><a href="/billing-issues/">Billing Issues</a></li>
+                <li><a href="/were-hiring/">We're Hiring</a></li>
+        </ul>
+    </nav> 
+    <div class="page-content info-page" >    
+  
+        {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+            {{{page.content}}}
+        {{/replace}}
+    </div>
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}</div>
+</main>
+{{/partial}}
+{{else}}
+{{#partial "aboutusbluesection"}}
+<div class="contactus-list-header">
+    <div class="container">
+        <div class="contactus-list-title">{{ page.title }}</div>
+          <div class="mob-contactus-menu">
+            <a>QUICK LINKS</a>
+              <ul class="navBar-section account-navigation">
+                  <li><a href="/contact-us/"> Tech Support</a></li>
+                  <li> <a href="/faq/">Frequently Asked Questions</a></li>
+                    <li> <a href="/golf-cart-battery-charger-faq/">Chargers & Batteries FAQs</a></li>
+                    <li> <a href="/change-or-cancel-pending-order/">Change Pending Order</a></li>
+                     <li> <a href="/policies/">Our Policies</a></li>
+                     <li> <a href="/product-returns/">Returns & Replacements</a></li>
+                     <li> <a href="/billing-issues/">Billing Issues</a></li>
+                         <li><a href="/were-hiring/">We're Hiring</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{/partial}}
+{{#partial "page"}}
+<main class="page contact-us-page">
+     <div class="contact-us-main-container" style="margin-top:60px;">
+    <nav class="navBar navBar--sub">
+        <ul class="navBar-section account-navigation">
+            <li><h3>QUICK LINKS</h3></li>
+          <li><a href="/contact-us/"> Tech Support</a></li>
+                  <li> <a href="/faq/">Frequently Asked Questions</a></li>
+                    <li> <a href="/golf-cart-battery-charger-faq/">Chargers & Batteries FAQs</a></li>
+                    <li> <a href="/change-or-cancel-pending-order/">Change Pending Order</a></li>
+                     <li> <a href="/policies/">Our Policies</a></li>
+                     <li> <a href="/product-returns/">Returns & Replacements</a></li>
+                     <li> <a href="/billing-issues/">Billing Issues</a></li>
+                         <li><a href="/were-hiring/">We're Hiring</a></li>
+        </ul>
+    </nav> 
+    <div class="page-content info-page" >    
+  
+        {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+            {{{page.content}}}
+        {{/replace}}
+    </div>
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}</div>
+</main>
+{{/partial}}
+  {{/if}}
+{{> layout/base}}

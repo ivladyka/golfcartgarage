@@ -1,0 +1,3 @@
+{
+  "components/carousel-content": "<div class=\"heroCarousel-content{{#unless show_background}} heroCarousel-content--empty{{/unless}}\">\r\n    <p class=\"heroCarousel-title\">{{{heading}}}</p>\r\n    <p class=\"heroCarousel-description\">{{{text}}}</p>\r\n    {{#if button_text}}\r\n<a href=\"{{url}}\">\r\n    <span class=\"heroCarousel-action button button--primary button--large\">{{button_text}}</span>\r\n</a>\r\n        {{/if}}\r\n</div>\r\n"
+}

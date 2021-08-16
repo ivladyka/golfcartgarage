@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ locale_name }}">
+<head>
+    <!-- anti flickr code starts here -->
+    <style>
+
+        .async-hide {
+            opacity: 0 !important
+        }
+    </style>
+    <script>(function (a, s, y, n, c, h, i, d, e) { s.className += ' ' + y; h.start = 1 * new Date; h.end = i = function () { s.className = s.className.replace(RegExp(' ?' + y), '') }; (a[n] = a[n] || []).hide = h; setTimeout(function () { i(); h.end = null }, c); h.timeout = c; })(window, document.documentElement, 'async-hide', 'dataLayer', 6000, { 'GTM-KN3432T': true });</script><!-- anti flickr code ends here -->
+
+    <title>{{ head.title }}</title>
+    {{{ head.meta_tags }}}
+    {{{ head.config }}}
+    {{#block "head"}} {{/block}}
+
+    <link href="{{ head.favicon }}" rel="shortcut icon">
+    {{!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        // Change document class from no-js to js so we can detect this in css
+        document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+    <link rel="dns-prefetch" href="https://klaviyo.com">
+    <link rel="dns-prefetch" href="https://facebook.net">
+    <link rel="dns-prefetch" href="https://helpscout.net">
+    <link rel="dns-prefetch" href="https://hotjar.com">
+    <link rel="dns-prefetch" href="https://cdn11.bigcommerce.com">
+    <link rel="preload" href="/product_images/theme_images/blogtitle-bg.jpg" as="image">
+    <link rel="preload" as="style" href="{{cdn '/assets/css/theme.css'}}">
+    {{ getFontsCollection }}
+    {{{stylesheet '/assets/css/theme.css'}}}
+
+    {{{head.scripts}}}
+    {{{head.rsslinks}}}
+
+    {{inject 'themeSettings' theme_settings}}
+    {{inject 'genericError' (lang 'common.generic_error')}}
+    {{inject 'maintenanceMode' settings.maintenance}}
+    {{inject 'urls' urls}}
+    {{inject 'template' template}}
+    {{{snippet 'htmlhead'}}}
+    {{#if page_type '===' 'product'}}
+    {{> components/common/facebook-like}}
+    {{else if page_type '===' 'blog' }}
+    {{> components/common/facebook-like}}
+    {{else if page_type '===' 'blog_post' }}
+    {{> components/common/facebook-like}}
+    {{/if}}
+
+    <script>
+            var theme_settings = {
+                show_fast_cart: {{theme_settings.show_fast_cart}},
+            };
+    </script>
+
+    <!-- begin: Google Site Verification Tag for Webmaster -->
+    <meta name="google-site-verification" content="bAiT5inC88Eegzh6aWS-04897yq4FHTbBz9QVcPVrJg" />
+    <meta name="google-site-verification" content="ClGlKxSydItHf3hDGdY4_2m-jo_S1XQOy75tGeUQyTI" />
+    <meta name="google-site-verification" content="ICOboU6S_S4xLn9Z_ob-yXOFXdsw-9fcNDTXtbfIwyA" />
+    <!-- end: Google Site Verification Tag for Webmaster -->
+
+    <meta name="msvalidate.01" content="417ACF2207E478B5C9AF7DF0893A6180" />
+    <meta name="p:domain_verify" content="d5bb044a176124797f383a4d09785eaa" />
+
+    <!-- begin: Bing Site Verification Tag for Webmaster -->
+    <meta name="msvalidate.01" content="F4415465F2FC74E95CA4594DEE0DC014" />
+    <!-- end: Bing Site Verification Tag for Webmaster -->
+    {{#block "customheaderscripts"}} {{/block}}
+</head>
+<body class="blog-page-layout">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN3432T"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {{{snippet 'header'}}}
+    <svg xmlns="https://www.w3.org/2000/svg" data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
+
+    {{#if settings.privacy_cookie}}
+    {{> components/common/cookie}}
+    {{/if}}
+
+    {{> components/common/header }}
+    {{> components/common/body-blog }}
+    {{> components/common/footer }}
+
+    <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+    <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+
+    <script>
+            // Exported in app.js
+            window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+    </script>
+
+    {{{footer.scripts}}}
+    {{#block "customfooterscripts"}} {{/block}}
+    {{{snippet 'footer'}}}
+
+    <!-- HelpFlow website chat service start -->
+    <!--   <script type="text/javascript">
+       var __lc = {};
+       __lc.license = 5349091;
+       __lc.group = 21;
+
+       __lc.params = [
+       { name: 'Customer', value: 'http://www.golfcartgarage.com/' },
+       { name: 'Customer Code', value: 'GOLF' },
+       { name: 'Customer Brief', value: 'http://goo.gl/0ralZY' },
+       { name: 'Site Search', value: 'http://goo.gl/yXIDU9' },
+       { name: 'Product FAQ', value: 'http://goo.gl/BnTrVJ' },
+       { name: 'Contact Page', value: 'http://goo.gl/6gqN7F' },
+       ];
+
+       (function() {
+           var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+           lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+
+       })();
+
+       </script>-->
+    <!--<script type="text/javascript">!function (e, t, n) { function a() { var e = t.getElementsByTagName("script")[0], n = t.createElement("script"); n.type = "text/javascript", n.defer = !0, n.src = "https://beacon-v2.helpscout.net", e.parentNode.insertBefore(n, e) } if (e.Beacon = n = function (t, n, a) { e.Beacon.readyQueue.push({ method: t, options: n, data: a }) }, n.readyQueue = [], "complete" === t.readyState) return a(); e.attachEvent ? e.attachEvent("onload", a) : e.addEventListener("load", a, !1) }(window, document, window.Beacon || function () { });</script>
+    <script type="text/javascript">window.Beacon('init', '89c09081-2a69-4a4f-a10c-bbbb734ba819')</script>-->
+    <script type="text/javascript">/* <![CDATA[ */
+        var google_conversion_id = 977010488;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */</script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js" defer></script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/977010488/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript>
+    {{!-- --}}
+    <script>(function (w, d, t, r, u) { var f, n, i; w[u] = w[u] || [], f = function () { var o = { ti: "5038379" }; o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad") }, n = d.createElement(t), n.src = r, n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && s !== "loaded" && s !== "complete" || (f(), n.onload = n.onreadystatechange = null) }, i = d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n, i) })(window, document, "script", "//bat.bing.com/bat.js", "uetq");</script>
+
+
+
+</body>
+</html>

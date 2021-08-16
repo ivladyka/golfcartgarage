@@ -1,0 +1,37 @@
+---
+brands:
+---
+
+{{#partial "page"}}
+<div class="page brandspage">
+    <aside class="page-sidebar shopbypricevisibility">
+        {{> components/make_model_year_filter}}
+    </aside>
+    <main class="page-content">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        <h1 class="page-heading">{{lang 'brand.label'}}</h1>
+        <ul class="brandGrid">
+            {{#each brands}}
+            <li class="brand">
+                <article class="card {{#if alternate}}card--alternate{{/if}}">
+                    <figure class="card-figure">
+                        <a href="{{url}}">
+                            <div class="card-img-container">
+                                <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'brand_size' (cdn ../theme_settings.default_image_brand)}}" alt="{{name}}" title="{{name}}">
+                            </div>
+                        </a>
+                    </figure>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{{url}}">{{name}}</a>
+                        </h4>
+                    </div>
+                </article>
+            </li>
+            {{/each}}
+        </ul>
+        {{> components/common/paginator pagination.brands}}
+    </main>
+</div>
+    {{/partial}}
+    {{> layout/base}}

@@ -1,0 +1,677 @@
+{{#partial "head"}}
+ {{{stylesheet '/assets/css/page.css'}}}
+{{/partial}}
+
+{{#partial "aboutusbluesection"}}
+<div class="contactus-list-header">
+    <div class="container">
+        <div class="contactus-list-title">{{ page.title }}</div>
+          
+    </div>
+</div>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=GCGOnloadCallback&render=explicit" async defer></script>
+<main class="page contact-us-page giveaway-page">
+    <div class="container">
+     <div class="contact-us-main-container" style="margin-top:60px;">
+    
+    <div class="page-content info-page" >    
+  
+        {{#replace '%%Syndicate%%' page.content}}
+            {{> components/page/rss_feed}}
+        {{else}}
+            {{{page.content}}}
+        {{/replace}}
+    </div>
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}</div>
+    
+    {{#if page.id '===' 178}}
+            <form class="giveaway-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdy6yBmPy9rsbGEx7yUKrd74RQ-arNlK8dOt3Vj2p7HLBvoGA/formResponse" target="_self" id="monthly-giveaway-form"  method="POST">
+                <div class="giveaway-form-row form-row form-row--half">
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">First Name <small>Required</small></label>
+                    <input  class="form-input" required id="1803239833" type="text" name="entry.1803239833" />
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Last Name <small>Required</small></label> 
+                    <input  class="form-input" id="2007991019" type="text" name="entry.2007991019"  required />
+                    </div>
+                </div>
+                <div class="giveaway-form-row form-row form-row--half">
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Address Line 1 <small>Required</small></label> 
+                    <input  class="form-input" id="1202334256" type="text" name="entry.1202334256" required />
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Address Line 2</label> 
+                        <input  class="form-input" id="746699267" type="text" name="entry.746699267" />
+                    </div>
+                </div>
+                <div class="giveaway-form-row-3 form-row form-row--third">
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                        <label class="form-label">City <small>Required</small></label> 
+                    <input  class="form-input" id="747932799" type="text" name="entry.747932799" required />
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                        <label class="form-label">State/Province <small>Required</small></label>
+                        <select " class="form-select"  id="1174181221" name="entry.1033874646"  required >
+                            <option value="Choose a State">Choose a State</option>
+                            <option value="Alabama">Alabama</option>
+                            <option value="Alaska">Alaska</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Arizona">Arizona</option>
+                            <option value="Arkansas">Arkansas</option>
+                            <option value="Armed Forces Africa">Armed Forces Africa</option>
+                            <option value="Armed Forces Americas">Armed Forces Americas</option>
+                            <option value="Armed Forces Canada">Armed Forces Canada</option>
+                            <option value="Armed Forces Europe">Armed Forces Europe</option>
+                            <option value="Armed Forces Middle East">Armed Forces Middle East</option>
+                            <option value="Armed Forces Pacific">Armed Forces Pacific</option>
+                            <option value="California">California</option>
+                            <option value="Colorado">Colorado</option>
+                            <option value="Connecticut">Connecticut</option>
+                            <option value="Delaware">Delaware</option>
+                            <option value="District of Columbia">District of Columbia</option>
+                            <option value="Federated States Of Micronesia">Federated States Of Micronesia</option>
+                            <option value="Florida">Florida</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Guam">Guam</option>
+                            <option value="Hawaii">Hawaii</option>
+                            <option value="Idaho">Idaho</option>
+                            <option value="Illinois">Illinois</option>
+                            <option value="Indiana">Indiana</option>
+                            <option value="Iowa">Iowa</option>
+                            <option value="Kansas">Kansas</option>
+                            <option value="Kentucky">Kentucky</option>
+                            <option value="Louisiana">Louisiana</option>
+                            <option value="Marshall Islands">Marshall Islands</option>
+                            <option value="Maryland">Maryland</option>
+                            <option value="Massachusetts">Massachusetts</option>
+                            <option value="Michigan">Michigan</option>
+                            <option value="Minnesota">Minnesota</option>
+                            <option value="Mississippi">Mississippi</option>
+                            <option value="Missouri">Missouri</option>
+                            <option value="Montana">Montana</option>
+                            <option value="Nebraska">Nebraska</option>
+                            <option value="Nevada">Nevada</option>
+                            <option value="New Hampshire">New Hampshire</option>
+                            <option value="New Jersey">New Jersey</option>
+                            <option value="New Mexico">New Mexico</option>
+                            <option value="New York">New York</option>
+                            <option value="North Carolina">North Carolina</option>
+                            <option value="North Dakota">North Dakota</option>
+                            <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                            <option value="Ohio">Ohio</option>
+                            <option value="Oklahoma">Oklahoma</option>
+                            <option value="Oregon">Oregon</option>
+                            <option value="Palau">Palau</option>
+                            <option value="Pennsylvania">Pennsylvania</option>
+                            <option value="Puerto Rico">Puerto Rico</option>
+                            <option value="Rhode Island">Rhode Island</option>
+                            <option value="South Carolina">South Carolina</option>
+                            <option value="South Dakota">South Dakota</option>
+                            <option value="Tennessee">Tennessee</option>
+                            <option value="Texas">Texas</option>
+                            <option value="Utah">Utah</option>
+                            <option value="Vermont">Vermont</option>
+                            <option value="Virgin Islands">Virgin Islands</option>
+                            <option value="Virginia">Virginia</option>
+                            <option value="Washington">Washington</option>
+                            <option value="West Virginia">West Virginia</option>
+                            <option value="Wisconsin">Wisconsin</option>
+                            <option value="Wyoming">Wyoming</option>
+                        </select>
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Zip/Postcode <small>Required</small></label> 
+                    <input  class="form-input"  id="1612885980" type="text" name="entry.1612885980" required />
+                    </div>
+                </div>
+                <div class="giveaway-form-row-3 form-row form-row--third">
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Email Address <small>Required</small></label> 
+                    <input  class="form-input" id="865079422" type="text" name="entry.865079422" required />
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Cart Make <small>Required</small></label>
+                    <input  class="form-input" id="1484704239" type="text" name="entry.1484704239" required />
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                        <label class="form-label">Golf Cart Use <small>Required</small></label>
+                        <select  class="form-select" id="610996200" name="entry.529806003" required >
+                           <option value="Neighborhood Transport">Neighborhood Transport</option>
+                            <option value="Golf">Golf</option>
+                            <option value="Farm Use/Yard Work">Farm Use/Yard Work</option>
+                            <option value="Beach/Lake/Camp Use">Beach/Lake/Camp Use</option>
+                            <option value="Hunting/Fishing">Hunting/Fishing</option>
+                            <option value="Facilities/Commercial/Government Use">Facilities/Commercial/Government Use</option>
+                            <option value="Teen Driving To/From School">Teen Driving To/From School</option>
+                            <option value="Repair/Sales or Other">Repair/Sales or Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="giveaway-form-row-3 form-row form-row--third">
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText"form-field form-field--input form-field--inputText"form-field form-field--input form-field--inputText"form-field form-field--input form-field--inputText"form-field form-field--input form-field--inputText"form-field form-field--input form-field--inputText"form-field form-field--input form-field--inputText"form-field form-field--input form-field--inputText"form-field form-field--input form-field--inputText"form-field form-field--input form-field--inputText"form-field form-field--input form-field--inputText"form-field form-field--input form-field--inputText">
+                        <div id="captchaGiveaway">&nbsp;</div>
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText" id="divGiveawayCaptchaError" style="color: Red;"></div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                        <input type="hidden" name="fvv" value="1">
+                        <input type="hidden" name="fbzx" value="-4587229929430270004">
+                        <input type="hidden" name="pageHistory" value="0">
+                        <input class="button button--primary" type="submit" value="Submit">
+                   </div>
+                </div>
+            </form>
+            <div id="divGiveawaySuccess" style="display: none; color: Green;">Form Submitted. Thank you!</div>
+            <h2 style="color: #2663c0;">READY TO ENTER FOR THE $3000 GRAND PRIZE?</h2>
+<p style="text-align: center;"><a  class="button button--primary"  href="/grand-prize-giveaway-entry">Go To Grand Prize Giveaway</a></p>
+{{else if page.id '===' 179}}
+  <form class="giveaway-form" class="giveaway-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdhfEkBygf6TznTfTARy2FIwmjaDxZZXfFQmyvQrC2bqnXh9w/formResponse"
+      target="_self" method="POST" id="grand-prize-giveaway-form"  >
+                <div class="giveaway-form-row form-row form-row--half">
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">First Name <small>Required</small></label>
+                    <input  class="form-input" id="1803239833" type="text" name="entry.1803239833" required />
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Last Name <small>Required</small></label> 
+                    <input  class="form-input" id="2007991019" type="text" name="entry.2007991019" required />
+                    </div>
+                </div>
+                <div class="giveaway-form-row form-row form-row--half">
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Address Line 1 <small>Required</small></label> 
+                    <input  class="form-input" id="1202334256" type="text" name="entry.1202334256" required />
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Address Line 2</label> 
+                        <input  class="form-input" id="746699267" type="text" name="entry.746699267"  />
+                    </div>
+                </div>
+                <div class="giveaway-form-row-3 form-row form-row--third">
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText"><label class="form-label">City <small>Required</small></label> 
+                    <input  class="form-input" id="747932799" type="text" name="entry.747932799" required />
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                        <label class="form-label">State/Province <small>Required</small></label>
+                        <select  class="form-select" id="1174181221" name="entry.1033874646" class="form-control" required >
+                            <option value="Choose a State">Choose a State</option>
+                            <option value="Alabama">Alabama</option>
+                            <option value="Alaska">Alaska</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Arizona">Arizona</option>
+                            <option value="Arkansas">Arkansas</option>
+                            <option value="Armed Forces Africa">Armed Forces Africa</option>
+                            <option value="Armed Forces Americas">Armed Forces Americas</option>
+                            <option value="Armed Forces Canada">Armed Forces Canada</option>
+                            <option value="Armed Forces Europe">Armed Forces Europe</option>
+                            <option value="Armed Forces Middle East">Armed Forces Middle East</option>
+                            <option value="Armed Forces Pacific">Armed Forces Pacific</option>
+                            <option value="California">California</option>
+                            <option value="Colorado">Colorado</option>
+                            <option value="Connecticut">Connecticut</option>
+                            <option value="Delaware">Delaware</option>
+                            <option value="District of Columbia">District of Columbia</option>
+                            <option value="Federated States Of Micronesia">Federated States Of Micronesia</option>
+                            <option value="Florida">Florida</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Guam">Guam</option>
+                            <option value="Hawaii">Hawaii</option>
+                            <option value="Idaho">Idaho</option>
+                            <option value="Illinois">Illinois</option>
+                            <option value="Indiana">Indiana</option>
+                            <option value="Iowa">Iowa</option>
+                            <option value="Kansas">Kansas</option>
+                            <option value="Kentucky">Kentucky</option>
+                            <option value="Louisiana">Louisiana</option>
+                            <option value="Marshall Islands">Marshall Islands</option>
+                            <option value="Maryland">Maryland</option>
+                            <option value="Massachusetts">Massachusetts</option>
+                            <option value="Michigan">Michigan</option>
+                            <option value="Minnesota">Minnesota</option>
+                            <option value="Mississippi">Mississippi</option>
+                            <option value="Missouri">Missouri</option>
+                            <option value="Montana">Montana</option>
+                            <option value="Nebraska">Nebraska</option>
+                            <option value="Nevada">Nevada</option>
+                            <option value="New Hampshire">New Hampshire</option>
+                            <option value="New Jersey">New Jersey</option>
+                            <option value="New Mexico">New Mexico</option>
+                            <option value="New York">New York</option>
+                            <option value="North Carolina">North Carolina</option>
+                            <option value="North Dakota">North Dakota</option>
+                            <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                            <option value="Ohio">Ohio</option>
+                            <option value="Oklahoma">Oklahoma</option>
+                            <option value="Oregon">Oregon</option>
+                            <option value="Palau">Palau</option>
+                            <option value="Pennsylvania">Pennsylvania</option>
+                            <option value="Puerto Rico">Puerto Rico</option>
+                            <option value="Rhode Island">Rhode Island</option>
+                            <option value="South Carolina">South Carolina</option>
+                            <option value="South Dakota">South Dakota</option>
+                            <option value="Tennessee">Tennessee</option>
+                            <option value="Texas">Texas</option>
+                            <option value="Utah">Utah</option>
+                            <option value="Vermont">Vermont</option>
+                            <option value="Virgin Islands">Virgin Islands</option>
+                            <option value="Virginia">Virginia</option>
+                            <option value="Washington">Washington</option>
+                            <option value="West Virginia">West Virginia</option>
+                            <option value="Wisconsin">Wisconsin</option>
+                            <option value="Wyoming">Wyoming</option>
+                        </select>
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Zip/Postcode <small>Required</small></label> 
+                    <input  class="form-input" id="1612885980" type="text" name="entry.1612885980"  required />
+                    </div>
+                </div>
+                <div class="giveaway-form-row-3 form-row form-row--third">
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Email Address <small>Required</small></label> 
+                    <input  class="form-input" id="865079422" type="text" name="entry.865079422" required />
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                    <label class="form-label">Cart Make <small>Required</small></label>
+                    <input  class="form-input" id="1484704239" type="text" name="entry.1484704239" required />
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                        <label class="form-label">Golf Cart Use <small>Required</small></label>
+                        <select  class="form-select" id="610996200" name="entry.529806003"  required ">
+                          <option value="Neighborhood Transport">Neighborhood Transport</option>
+                            <option value="Golf">Golf</option>
+                            <option value="Farm Use/Yard Work">Farm Use/Yard Work</option>
+                            <option value="Beach/Lake/Camp Use">Beach/Lake/Camp Use</option>
+                            <option value="Hunting/Fishing">Hunting/Fishing</option>
+                            <option value="Facilities/Commercial/Government Use">Facilities/Commercial/Government Use</option>
+                            <option value="Teen Driving To/From School">Teen Driving To/From School</option>
+                            <option value="Repair/Sales or Other">Repair/Sales or Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="giveaway-form-row-3 form-row form-row--third">
+                   <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                        <div id="captchaGrandPrize">&nbsp;</div>                    
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText" id="divGrandPrizeCaptchaError" style="color: Red;"></div>                    
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText"  style="text-align:right">
+                    <input type="hidden" name="fvv" value="1">
+                    <input type="hidden" name="fbzx" value="5881029750101209450">                  
+                    <input type="hidden" name="pageHistory" value="0">                
+                    <input  class="button button--primary" type="submit" value="Enter to Win"  style="margin-top:28px">
+                    </div>
+                </div>
+            </form>  
+<h2  style="color: #2663c0;">WANT A CHANCE TO WIN EVERY MONTH?</h2>
+<p style="text-align: center;">
+<a  class="button button--primary"  href="/monthly-giveaway-entry">Go To Monthly Giveaway</a>
+</p>
+{{else if page.id '===' 184}}
+<style>
+    .form-radio+.form-label::before{
+        height: 24px;
+    width: 24px;
+    }
+    .form-radio+.form-label:last-child{
+    line-height: 32px;
+    padding-left: 40px;
+    }
+    .form-radio+.form-label::after{
+        height: 22px;
+            width: 22px;
+            background: #2663c0;
+    }
+    .form-row--quarter .form-field {
+    width: auto;
+    margin-right: 40px;
+}
+h4 {
+    font-size: 16px !important;
+}
+</style>
+<form  class="giveaway-form" action="https://docs.google.com/forms/d/e/1FAIpQLSc5_bWifdmxTCV8QE06ku49xEySabwBbnF0fF0FaKYYXljsBQ/formResponse"      target="_self"      id="geadheads-survey-form"    method="POST">
+     <!-- Field type: "choices" id: "643808075" -->
+    <div class="form-group">
+        <h4 for="643808075">1.Was the scheduling process easy to use?</h4>
+        <div class="form-group giveaway-form-row-3 form-row form-row--quarter ">
+            <div class="radio giveaway-form-field form-field form-field--input form-field--inputText">
+                 <input type="radio" class="form-radio" id="entry.1803239833-1" name="entry.1803239833" value="Very easy" required>
+                 <label class="form-label" for="entry.1803239833-1">
+                    Very easy
+                </label>
+            </div>
+            <div class="radio giveaway-form-field form-field form-field--input form-field--inputText">
+                <input type="radio" class="form-radio" name="entry.1803239833" id="entry.1803239833-2" value="Moderately easy" required> 
+                <label class="form-label" for="entry.1803239833-2">
+                   
+                    Moderately easy
+                </label>
+            </div>
+            <div class="radio giveaway-form-field form-field form-field--input form-field--inputText">
+                <input type="radio" class="form-radio" name="entry.1803239833" id="entry.1803239833-3" value="Not easy" required>
+                <label class="form-label" for="entry.1803239833-3">
+                   
+                    Not easy
+                </label>
+            </div>
+        </div>
+    </div>
+
+  <div class="form-group">
+        <h4 for="1685180376">2. Did the service solve your cart issue?</h4>
+        <div class="form-group giveaway-form-row-3 form-row form-row--quarter">
+           <div class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+               <input  class="form-radio"  type="radio" name="entry.2007991019"  id="entry.2007991019-1" value="Yes" required> 
+               <label  class="form-label" for="entry.2007991019-1">
+                    Yes
+                </label>
+            </div>
+            <div class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                <input  class="form-radio"  type="radio" name="entry.2007991019"   id="entry.2007991019-2" value="Somewhat" required>  
+                <label  class="form-label" for="entry.2007991019-2">
+                    Somewhat
+                </label>
+            </div>
+            <div class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                  <input  class="form-radio"  type="radio" name="entry.2007991019"    id="entry.2007991019-3" value="No" required>  
+                  <label  class="form-label" for="entry.2007991019-3">
+                    No
+                </label>
+            </div>
+        </div>        
+   </div>
+
+     <div class="form-group">
+        <h4 for="27239847">3. Had you used our online or YouTube resources for troubleshooting prior to scheduling the appointment?</h4>
+       <div class="form-group giveaway-form-row-3 form-row form-row--quarter">
+            <div class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                 <input  class="form-radio" type="radio" name="entry.1202334256"    id="entry.1202334256-1" value="Yes" required> 
+                 <label  class="form-label" for="entry.1202334256-1">
+                    Yes
+                </label>
+            </div>
+            <div class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                 <input  class="form-radio" type="radio" name="entry.1202334256"   id="entry.1202334256-2" value="Somewhat" required>
+                 <label  class="form-label" for="entry.1202334256-2">
+                    Somewhat
+                </label>
+            </div>
+            <div class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                  <input  class="form-radio" type="radio" name="entry.1202334256"   id="entry.1202334256-3" value="No" required> 
+                  <label  class="form-label" for="entry.1202334256-3">
+                    No
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+   <div class="form-group">
+        <h4 for="880893936">4. How satisfied are you with the service?</h4>
+        <div class="form-group giveaway-form-row-3 form-row form-row--quarter">
+            <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                 <input  class="form-radio" type="radio" name="entry.746699267" id="entry.746699267-1" value="Very satisfied" required>
+                   <label  class="form-label" for="entry.746699267-1">
+                    Very satisfied
+                </label>
+            </div>
+            <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                 <input   class="form-radio" type="radio" name="entry.746699267"  id="entry.746699267-2" value="Somewhat satisfied" required>
+               <label  class="form-label" for="entry.746699267-2">
+                    Somewhat satisfied
+                </label>
+            </div>
+            <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                <input  class="form-radio" type="radio" name="entry.746699267"  id="entry.746699267-3" value="Not satisfied" required> 
+                <label  class="form-label" for="entry.746699267-3">
+                    Not satisfied
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+   <div class="form-group">
+        <h4 for="1931148098">5. How likely are you to use the service again or recommend to others? </h4>
+        <div class="form-group giveaway-form-row-3 form-row form-row--quarter">
+            <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                 <input   class="form-radio" type="radio" name="entry.747932799"  id="entry.747932799-1"  value="Very likely" required> 
+                 <label  class="form-label" for="entry.747932799-1">
+                    Very likely
+                </label>
+            </div>
+             <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                <input  class="form-radio" type="radio" name="entry.747932799"  id="entry.747932799-2" value="Somewhat likely" required>
+                 <label  class="form-label" for="entry.747932799-2">
+                   
+                    Somewhat likely
+                </label>
+            </div>
+            <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+               <input   class="form-radio" type="radio" name="entry.747932799"  id="entry.747932799-3"  value="Not likely" required> 
+                   <label  class="form-label" for="entry.747932799-3">
+                   
+                    Not likely
+                </label>
+            </div>
+        </div>
+  </div>
+   <div class="form-group">
+        <h4 for="1174181221">6. Did the service save you money?</h4>
+        <div class="form-group giveaway-form-row-3 form-row form-row--quarter">
+            <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+               <input   class="form-radio" type="radio" name="entry.1033874646" id="entry.1033874646-1" value="Yes quite a bit" required>
+                 <label  class="form-label" for="entry.1033874646-1">
+                    Yes quite a bit
+                </label>
+            </div>
+            <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                 <input   class="form-radio" type="radio" name="entry.1033874646"  id="entry.1033874646-2" value="Some money" required>
+                <label  class="form-label" for="entry.1033874646-2">
+                    Some money
+                </label>
+            </div>
+            <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                <input   class="form-radio" type="radio" name="entry.1033874646"  id="entry.1033874646-3"  value="Not really" required>
+                <label  class="form-label" for="entry.1033874646-3">
+                    Not really
+                </label>
+            </div>
+        </div>
+  </div>
+
+
+  <div class="form-group">
+        <h4 for="358122593">7. Did the service save you time?</h4>
+          <div class="form-group giveaway-form-row-3 form-row form-row--quarter">
+            <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                <input  class="form-radio" type="radio" name="entry.1612885980"  id="entry.1612885980-1"value="Yes quite a bit" required>
+                  <label  class="form-label" for="entry.1612885980-1">
+                    Yes quite a bit
+                </label>
+            </div>
+            <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                  <input   class="form-radio" type="radio" name="entry.1612885980" id="entry.1612885980-2" value="Some time" required>
+                   <label  class="form-label" for="entry.1612885980-2">
+                    Some time
+                </label>
+            </div>
+            <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                <input   class="form-radio" type="radio" name="entry.1612885980"  id="entry.1612885980-3" value="Not really" required>
+                 <label  class="form-label" for="entry.1612885980-3">
+                    Not really
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+   <div class="form-group">
+        <h4 for="302884343">8. Was your technician courteous and professional? </h4>
+         <div class="form-group giveaway-form-row-3 form-row form-row--quarter">
+             <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+              <input  class="form-radio" type="radio" name="entry.865079422" id="entry.865079422-1" value="Very" required>
+             <label  class="form-label" for="entry.865079422-1">
+                    Very
+                </label>
+            </div>
+           <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                <input class="form-radio" type="radio" name="entry.865079422"  id="entry.865079422-2" value="Somewhat" required>
+               <label  class="form-label" for="entry.865079422-2">
+                    Somewhat
+                </label>
+            </div>
+           <div  class="radio  giveaway-form-field form-field form-field--input form-field--inputText">
+                 <input class="form-radio" type="radio" name="entry.865079422"  id="entry.865079422-3" value="Not really" required>
+                <label  class="form-label" for="entry.865079422-3">
+                    Not really
+                </label>
+            </div>
+        </div>
+    </div>
+     <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+        <h4 class="form-label"  for="330372422">9. What did you like the most and least about the service?</h4>
+       <textarea class="form-input" id="1484704239" name="entry.1484704239" rows="6"/></textarea>
+   </div>
+
+   <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+        <h4 class="form-label"  for="610996200">10. Any other features you’d like to see included in the service?</h4>
+       <textarea class="form-input"  id="529806003" name="entry.529806003" rows="6" /></textarea>
+   </div>
+       <div class="giveaway-form-row-3 form-row form-row--third">
+                   <div class="giveaway-form-field form-field form-field--input form-field--inputText">
+                        <div id="captchaGeadheads">&nbsp;</div>                    
+                    </div>
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText" id="divGeadheadsCaptchaError" style="color: Red;"></div>                   
+                    <div class="giveaway-form-field form-field form-field--input form-field--inputText"  style="text-align:right">
+                         <input type="hidden" name="fvv" value="1">
+                        <input type="hidden" name="fbzx" value="6501447227131343661">
+                         <input type="hidden" name="pageHistory" value="0">
+                        <input  class="button button--primary" type="submit" value="Submit"  style="margin-top:28px">
+                    </div>
+        </div>
+</form>
+ <h4 id="divGeadheadsSuccess" style="display: none; color: Green;">Form Submitted. Thank you!</h4>
+{{/if}}
+    </div>
+</main>
+{{/partial}}
+{{#partial "page"}}
+
+{{/partial}}
+ 
+{{> layout/base}}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/us_US/sdk.js#xfbml=1&version=v10.0" nonce="GpDJMNrP"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script> 
+<script>
+    var widgetGiveaway;
+    var widgetGrandPrize;
+    var widgetGeadheads;
+    var GCGOnloadCallback = function() 
+    {
+        if(document.getElementById('captchaGeadheads') != null)
+        {
+            widgetGeadheads = grecaptcha.render('captchaGeadheads', {
+            'sitekey' : '6LccmasUAAAAAIRhScC9asOrH_rQblw06weNOzDI'
+            });
+        }
+        if(document.getElementById('captchaGiveaway') != null)
+        {
+            widgetGiveaway = grecaptcha.render('captchaGiveaway', {
+            'sitekey' : '6LccmasUAAAAAIRhScC9asOrH_rQblw06weNOzDI'
+            });
+        }
+        if(document.getElementById('captchaGrandPrize') != null)
+        {
+            widgetGrandPrize = grecaptcha.render(document.getElementById('captchaGrandPrize'), {
+              'sitekey' : '6LccmasUAAAAAIRhScC9asOrH_rQblw06weNOzDI'
+            });
+        }
+    };
+    
+$(document).ready(function() {
+    $('#geadheads-survey-form').submit(function (event) 
+    {
+        $("#divGeadheadsCaptchaError").html("");
+        event.preventDefault();
+        if(grecaptcha.getResponse(widgetGeadheads).length == 0)
+        {
+            $("#divGeadheadsCaptchaError").html("Incorrect Captcha, please try again!");
+        }
+        else
+        {
+            var extraData = {};
+            $('#geadheads-survey-form').ajaxSubmit({
+                data: extraData,
+                dataType: 'jsonp',  
+                error: function () 
+                {
+                    $("#geadheads-survey-form").hide();
+                    $("#divGeadheadsSuccess").show();
+                }
+        })
+        }
+    });
+    
+    $('#monthly-giveaway-form').submit(function (event) 
+    {
+        $("#divGiveawayCaptchaError").html("");
+        event.preventDefault();
+        if(grecaptcha.getResponse(widgetGiveaway).length == 0)
+        {
+            $("#divGiveawayCaptchaError").html("Incorrect Captcha, please try again!");
+        }
+        else
+        {
+            var extraData = {};
+            $('#monthly-giveaway-form').ajaxSubmit({
+                data: extraData,
+                dataType: 'jsonp',  
+                error: function () 
+                {
+                    $("#monthly-giveaway-form").hide();
+                    $("#divGiveawaySuccess").show();
+                }
+        })
+        }
+    });
+    
+    $('#grand-prize-giveaway-form').submit(function (event) 
+    {
+        $("#divGrandPrizeCaptchaError").html("");
+        if(grecaptcha.getResponse(widgetGiveaway).length == 0)
+        {
+            event.preventDefault();
+            $("#divGrandPrizeCaptchaError").html("Incorrect Captcha, please try again!");
+        }
+        else
+        {
+            var extraData = {};
+            $('#grand-prize-giveaway-form').ajaxSubmit({
+                data: extraData,
+                dataType: 'jsonp',  
+                error: function () 
+                {
+                    $("#grand-prize-giveaway-form").hide();
+                }
+        })
+        }
+    });
+    
+  
+
+});
+</script>

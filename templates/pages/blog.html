@@ -1,0 +1,51 @@
+---
+blog:
+    posts:
+        limit: 15
+        pages: 10
+        summary: 300
+---
+{{#partial "head"}}
+ {{{stylesheet '/assets/css/page.css'}}}
+{{/partial}}
+{{#partial "aboutusbluesection"}}
+
+<div class="blog-list-header">
+    <div class="container">
+        <div class="blog-list-title">GCG BLOG</div>
+        <div class="mob-blog-menu">
+            <a>CATEGORIES</a>
+            <ul>
+                <li> <a href="/blog/tag/All Posts">All Posts</a></li>
+                <li> <a href="/blog/tag/batteries">Batteries</a></li>
+                <li> <a href="/blog/tag/Tires & Wheels">Tires & Wheels</a></li>
+                <li> <a href="/blog/tag/accessories">Accessories</a></li>
+                <li> <a href="/blog/tag/maintenance">Maintenance</a></li>
+                <li> <a href="/blog/tag/Lift Kits">Lift Kits</a></li>
+                <li> <a href="/blog/tag/chargers">Chargers</a></li>
+                <li> <a href="/blog/tag/club car">Club Car</a></li>
+                <li> <a href="/blog/tag/yamaha">Yamaha</a></li>
+                <li> <a href="/blog/tag/ezgo">EZGO</a></li>
+                <li> <a href="/blog/tag/Lester Electrical">Lester Electrical</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{/partial}}
+
+{{#partial "page"}}
+<main class="page blog-list">
+    <!--    <h1 class="page-heading">{{ blog.name }}</h1>-->
+    <ul class="blog-list-section">
+        {{#each blog.posts}}
+        <li>
+            {{> components/blog/blog-list-post post=this settings=../settings}}
+        </li>
+        {{/each}}
+    </ul>
+
+    {{> components/common/paginator pagination.blog}}
+</main>
+
+{{/partial}}
+{{> layout/blog-list}}

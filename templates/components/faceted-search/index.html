@@ -1,0 +1,79 @@
+<div id="facetedSearch" class="facetedSearch sidebarBlock">
+    {{> components/faceted-search/selected-facets this.selected}}
+
+    <a href="#facetedSearch-navList" role="button" class="facetedSearch-toggle toggleLink button" data-collapsible>
+        <span class="facetedSearch-toggle-indicator">
+            <span class="toggleLink-text toggleLink-text--on">
+                {{lang 'search.faceted.hide-filters'}}
+
+                <i class="icon" aria-hidden="true">
+                    <svg><use xlink:href="#icon-chevron-down"/></svg>
+                </i>
+            </span>
+
+            <span class="toggleLink-text toggleLink-text--off">
+                {{lang 'search.faceted.show-filters'}}
+
+                <i class="icon" aria-hidden="true">
+                    <svg><use xlink:href="#icon-chevron-down"/></svg>
+                </i>
+            </span>
+        </span>
+    </a>
+
+    {{#any facets visible=true}}
+        <div
+            id="facetedSearch-navList"
+            class="facetedSearch-navList blocker-container">
+            <div class="accordion accordion--navList">
+                {{#each facets}}
+
+                    {{#if facet '===' 'model'}}
+                    
+                    {{else if facet '===' 'make'}}
+                    
+                    {{else if facet '===' 'year'}}
+                    
+                    {{else}}
+
+                        {{#if visible}}
+                            {{{dynamicComponent 'components/faceted-search/facets'}}}
+                        {{/if}}
+
+                    {{/if}}
+                    
+                {{/each}}
+            </div>
+
+            <div class="blocker" style="display: none;"></div>
+        </div>
+    {{/any}}
+</div>
+
+<div  class="te2" id="ysw-hidden-available-filters" style="display:none">
+{{#any facets visible=true}}
+    {{#each facets}}
+        {{#if facet '===' 'model'}}
+        <ul data-filter-name="model">
+            {{#each items}}
+            <li>{{title}}</li>
+            {{/each}}
+        </ul>
+        {{else if facet '===' 'make'}}
+        <ul data-filter-name="make">
+            {{#each items}}
+            <li>{{title}}</li>
+            {{/each}}
+        </ul>
+        {{else if facet '===' 'year'}}
+<ul data-filter-name="year">
+    {{#each items}}
+    <li>{{title}}</li>
+    {{/each}}
+    <!--<li>2000 (January-June)</li>-->
+    <!--<li>2000 (July-December)</li>-->
+</ul>
+        {{/if}}
+    {{/each}}
+{{/any}}
+</div>

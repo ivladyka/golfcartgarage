@@ -1,0 +1,30 @@
+<div class="body {{#if template_file '===' 'pages/home'}}home{{/if}}">
+    {{#block "hero"}} {{/block}}
+    {{#block "aboutusbluesection"}} {{/block}}
+
+    <div class="container">
+        <div class="page">
+            <div class="blog-menu page">
+                <ul>
+                    <li> <a href="/blog/">All Posts</a></li>
+                    <li> <a href="/blog/tag/batteries">Batteries</a></li>
+                    <li> <a href="/blog/tag/Tires & Wheels">Tires & Wheels</a></li>
+                    <li> <a href="/blog/tag/accessories">Accessories</a></li>
+                    <li> <a href="/blog/tag/maintenance">Maintenance</a></li>
+                    <li> <a href="/blog/tag/Lift Kits">Lift Kits</a></li>
+                    <li> <a href="/blog/tag/chargers">Chargers</a></li>
+                    <li> <a href="/blog/tag/club car">Club Car</a></li>
+                    <li> <a href="/blog/tag/yamaha">Yamaha</a></li>
+                    <li> <a href="/blog/tag/ezgo">EZGO</a></li>
+                    <li> <a href="/blog/tag/Lester Electrical">Lester Electrical</a></li>
+                </ul>
+            </div>
+        </div>
+        {{#block "page"}} {{/block}}
+    </div>
+
+    {{#block "instagramsection"}} {{/block}}
+
+    {{> components/common/modal}}
+</div>
+
